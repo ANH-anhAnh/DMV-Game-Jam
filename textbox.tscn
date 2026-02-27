@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://bo0us3t228ym7"]
+
+[ext_resource type="Script" path="res://scripts/textbox.gd" id="1_p6w6l"]
+[ext_resource type="Texture2D" uid="uid://bm3i86k0j4w7w" path="res://art/anh sprite.png" id="2_be6u7"]
+[ext_resource type="Texture2D" uid="uid://bd3cps1cc5npb" path="res://art/starlings.png" id="3_pw5m0"]
+[ext_resource type="Texture2D" uid="uid://50d8xkio0lld" path="res://art/Idle.png" id="3_tfii6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axoti"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_blend = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b8f4"]
+atlas = ExtResource("2_be6u7")
+region = Rect2(0, 0, 696, 825)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vicw8"]
+atlas = ExtResource("3_pw5m0")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ny4l3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5b8f4")
+}],
+"loop": true,
+"name": &"anh",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vicw8")
+}],
+"loop": true,
+"name": &"starling",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x01y5"]
+atlas = ExtResource("3_tfii6")
+region = Rect2(0, 320, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7j5mu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x01y5")
+}],
+"loop": true,
+"name": &"flynn",
+"speed": 5.0
+}]
+
+[node name="Textbox" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_p6w6l")
+
+[node name="TextboxContainer" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -123.0
+offset_right = -157.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_axoti")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="start" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "*"
+
+[node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "Testing"
+autowrap_mode = 3
+
+[node name="end" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 30
+text = "v
+"
+
+[node name="right" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(327, 179)
+scale = Vector2(0.355424, 0.355833)
+sprite_frames = SubResource("SpriteFrames_ny4l3")
+animation = &"starling"
+
+[node name="left" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(60, 163)
+scale = Vector2(6.85417, 6.5)
+sprite_frames = SubResource("SpriteFrames_7j5mu")

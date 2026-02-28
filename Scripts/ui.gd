@@ -4,16 +4,15 @@ var SquareScene := preload("res://Scenes/square.tscn")
 var block
 var hunger = 100
 
-var maximum = 260
-
+var maximum = 100
+## sets hunger bar
 func _ready() -> void:
-	var rect = $CanvasLayer/ColorRect
-	
-	var new_height = (maximum / 100.0) * hunger
-	
-	rect.size.y = new_height
-	rect.position.y = maximum - new_height
+	var newheight = (260.0 / 100.0) * hunger
+	var heightdiff = newheight - $CanvasLayer/ColorRect.size.y
 
+	$CanvasLayer/ColorRect.size.y = newheight
+	$CanvasLayer/ColorRect.position.y = $CanvasLayer/ColorRect.position.y - heightdiff
+##map button
 func _on_button_pressed() -> void:
 	if(!Map.shown):
 		var sq = SquareScene.instantiate()
@@ -27,9 +26,9 @@ func _on_button_pressed() -> void:
 	else:
 		block.queue_free()
 		Map.hidemap()
-
+		
+## updates the hunger bar
 func update():
-	hunger = 100
 	var newheight = (260.0 / 100.0) * hunger
 	var heightdiff = newheight - $CanvasLayer/ColorRect.size.y
 

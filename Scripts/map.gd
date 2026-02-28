@@ -1,5 +1,5 @@
 extends Node2D
-
+## level layout, contains all room scenes 
 var layout1 = [
 	[0,1,0,0,0],
 	[1,1,1,1,0],
@@ -7,7 +7,7 @@ var layout1 = [
 	[1,"res://Scenes/rooms/room_2.tscn",1,1,0],
 	[0,"res://Scenes/rooms/room_1.tscn",0,0,0]
 ]
-
+##array containing explored coordinates
 var explored = []
 
 var playercircle
@@ -19,7 +19,7 @@ var shown = 0
 var cell_size := 50
 var SquareScene := preload("res://Scenes/square.tscn")
 var CircleScene := preload("res://Scenes/circle.tscn")
-
+#resets the explored coordinates on enter
 func _ready():
 	currentlayout = layout1
 	reset()
@@ -27,6 +27,7 @@ func _ready():
 func disp():
 	showmap(explored)
 
+##just sets explored size to level size then zeroes every entry
 func reset():
 	explored = []
 	for row in currentlayout:
@@ -38,6 +39,7 @@ func reset():
 
 	explored[selfpos[1]][selfpos[0]] = 1
 
+## goes through every explored panel and displays explored spaces
 func showmap(layout):
 	self.show()
 	var ypos = 100
@@ -68,6 +70,7 @@ func showmap(layout):
 		yp += 1
 	shown = 1
 	while shown:
+		##blinking player circle :
 		await get_tree().create_timer(.5).timeout
 		playercircle.visible = false
 		await get_tree().create_timer(.5).timeout
@@ -78,6 +81,7 @@ func hidemap():
 	shown = 0
 	self.hide()
 
+##updates explored spaces and changes scenes!
 func sceneupdate(change):
 	selfpos[0] += change[0]
 	selfpos[1] += change[1]

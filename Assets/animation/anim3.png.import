@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnvle51lkbqw6"
-path="res://.godot/imported/initiation room.png-969f85e793f583984efee1ec9859cf31.ctex"
+uid="uid://hiwscxaqj005"
+path="res://.godot/imported/anim3.png-ff8bf859a1cc513180b023635e8b0287.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/initiation room.png"
-dest_files=["res://.godot/imported/initiation room.png-969f85e793f583984efee1ec9859cf31.ctex"]
+source_file="res://Assets/animation/anim3.png"
+dest_files=["res://.godot/imported/anim3.png-ff8bf859a1cc513180b023635e8b0287.ctex"]
 
 [params]
 

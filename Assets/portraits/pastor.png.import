@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn4tl887v61mh"
-path="res://.godot/imported/room 2.png-d6a380f0eb09cac457a681bb50375ee6.ctex"
+uid="uid://dlljedh0hu60c"
+path="res://.godot/imported/pastor.png-ee65ec1819717a92575fda38b8c85cb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/room 2.png"
-dest_files=["res://.godot/imported/room 2.png-d6a380f0eb09cac457a681bb50375ee6.ctex"]
+source_file="res://Assets/portraits/pastor.png"
+dest_files=["res://.godot/imported/pastor.png-ee65ec1819717a92575fda38b8c85cb4.ctex"]
 
 [params]
 

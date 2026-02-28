@@ -19,4 +19,13 @@ offset_top = 8.0
 offset_right = 630.0
 offset_bottom = 58.0
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=547625546]
+anchors_preset = -1
+offset_left = 25.0
+offset_top = 270.0
+offset_right = 40.0
+offset_bottom = 310.0
+grow_vertical = 0
+color = Color(1.0039686, 0.61004496, 0.5588952, 1)
+
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

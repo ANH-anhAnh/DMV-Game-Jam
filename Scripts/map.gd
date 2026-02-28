@@ -8,41 +8,63 @@ var layout1 = [
 	[0,"res://Scenes/rooms/room_1.tscn",0,0,0]
 ]
 
+var playercircle
 var currentlayout
 
 var selfpos = [1,4]
+var shown = 0
 
 var cell_size := 50
 var SquareScene := preload("res://Scenes/square.tscn")
 var CircleScene := preload("res://Scenes/circle.tscn")
 
 func _ready():
-	pass
-	
+	currentlayout = layout1
+
+func disp():
+	showmap(currentlayout)
+
+
 func showmap(layout):
-	var ypos = 0
+	self.show()
+	var ypos = 100
 	var yp = 0
 	for row in layout:
-		var xpos = 0
+		var xpos = 250
 		var xp = 0
 		for cell in row:
 			if cell is String:
 				var sq = SquareScene.instantiate()
 				add_child(sq)
 				sq.position = Vector2(xpos, ypos)
+				sq.z_index = 2
 			elif cell == 1:
 				var sq = SquareScene.instantiate()
 				add_child(sq)
 				sq.position = Vector2(xpos, ypos)
+				sq.z_index = 2
 			if xp == selfpos[0] and yp == selfpos[1]:
 				var cir = CircleScene.instantiate()
 				add_child(cir)
 				cir.position = Vector2(xpos + 20, ypos + 20) 
+				cir.z_index = 2
+				playercircle = cir
 			xpos += cell_size
 			xp += 1
 		ypos += cell_size
 		yp += 1
-		
+	shown = 1
+	while shown:
+		await get_tree().create_timer(.5).timeout
+		playercircle.visible = false
+		await get_tree().create_timer(.5).timeout
+		playercircle.visible = true
+
+
+func hidemap():
+	shown = 0
+	self.hide()
+
 func sceneupdate(change):
 	selfpos[0] += change[0]
 	selfpos[1] += change[1]

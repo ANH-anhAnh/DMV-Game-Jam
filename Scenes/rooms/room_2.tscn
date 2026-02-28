@@ -10,7 +10,7 @@ position = Vector2(320, 180)
 texture = ExtResource("1_rv0jd")
 
 [node name="exit" parent="." unique_id=617258739 instance=ExtResource("2_bebw6")]
-offset_left = 224.0
-offset_top = 287.0
-offset_right = 224.0
-offset_bottom = 287.0
+offset_left = 126.0
+offset_top = 303.0
+offset_right = 126.0
+offset_bottom = 303.0

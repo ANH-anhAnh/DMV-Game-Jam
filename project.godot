@@ -14,6 +14,11 @@ config/name="DMV GJ Parasite"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/Audio/icon.svg"
 
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

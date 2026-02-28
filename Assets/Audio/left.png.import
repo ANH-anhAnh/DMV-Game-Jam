@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://db7xcpehqepsd"
-path="res://.godot/imported/right1.png-2098bbf1bb49a48f341a32a1b3470c3e.ctex"
+uid="uid://cp2nasgydwmb8"
+path="res://.godot/imported/left.png-f066d082e06286be3e1a8920b52292bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/hands/right1.png"
-dest_files=["res://.godot/imported/right1.png-2098bbf1bb49a48f341a32a1b3470c3e.ctex"]
+source_file="res://Assets/Audio/left.png"
+dest_files=["res://.godot/imported/left.png-f066d082e06286be3e1a8920b52292bd.ctex"]
 
 [params]
 

@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dlnsevwebpb2"]
 
-[ext_resource type="Texture2D" uid="uid://cwolm1ij0m3y" path="res://Assets/animation/anim1.png" id="1_21tkn"]
+[ext_resource type="Texture2D" uid="uid://bnvle51lkbqw6" path="res://Assets/rooms/initiation room.png" id="1_ojhq1"]
 [ext_resource type="PackedScene" uid="uid://k37hlke3k7x3" path="res://Scenes/Objects/up.tscn" id="1_ud0xu"]
-[ext_resource type="PackedScene" path="res://Scenes/ui.tscn" id="3_21tkn"]
+[ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="3_21tkn"]
 
 [node name="Room1" type="Node2D" unique_id=1381375635]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=620613233]
 position = Vector2(320, 180)
-texture = ExtResource("1_21tkn")
+texture = ExtResource("1_ojhq1")
 
 [node name="up" parent="." unique_id=462097833 instance=ExtResource("1_ud0xu")]
 offset_left = 219.0

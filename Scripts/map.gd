@@ -85,7 +85,5 @@ func hidemap():
 func sceneupdate(change):
 	selfpos[0] += change[0]
 	selfpos[1] += change[1]
-	Transition.transition()
-	await Transition.on_transition_finished
 	explored[selfpos[1]][selfpos[0]] = 1
 	get_tree().change_scene_to_file(layout1[selfpos[1]][selfpos[0]])

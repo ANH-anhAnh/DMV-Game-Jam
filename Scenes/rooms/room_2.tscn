@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dn4tl887v61mh" path="res://Assets/room 2.png" id="1_rv0jd"]
 [ext_resource type="PackedScene" uid="uid://canmda7hvygfw" path="res://Scenes/Objects/exit.tscn" id="2_bebw6"]
+[ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="3_lqljp"]
 
 [node name="room2" type="Node2D" unique_id=1463458449]
 
@@ -14,3 +15,5 @@ offset_left = 126.0
 offset_top = 303.0
 offset_right = 126.0
 offset_bottom = 303.0
+
+[node name="UI" parent="." unique_id=56917250 instance=ExtResource("3_lqljp")]

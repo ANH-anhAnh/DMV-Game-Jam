@@ -8,6 +8,8 @@ var layout1 = [
 	[0,"res://Scenes/rooms/room_1.tscn",0,0,0]
 ]
 
+var explored = []
+
 var playercircle
 var currentlayout
 
@@ -20,10 +22,21 @@ var CircleScene := preload("res://Scenes/circle.tscn")
 
 func _ready():
 	currentlayout = layout1
+	reset()
 
 func disp():
-	showmap(currentlayout)
+	showmap(explored)
 
+func reset():
+	explored = []
+	for row in currentlayout:
+		explored.append(row.duplicate())
+
+	for y in range(explored.size()):
+		for x in range(explored[y].size()):
+			explored[y][x] = 0
+
+	explored[selfpos[1]][selfpos[0]] = 1
 
 func showmap(layout):
 	self.show()
@@ -68,4 +81,5 @@ func hidemap():
 func sceneupdate(change):
 	selfpos[0] += change[0]
 	selfpos[1] += change[1]
+	explored[selfpos[1]][selfpos[0]] = 1
 	get_tree().change_scene_to_file(layout1[selfpos[1]][selfpos[0]])

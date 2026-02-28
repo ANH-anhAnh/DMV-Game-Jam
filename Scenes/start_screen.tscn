@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cw358yex8iv7u"]
+
+[ext_resource type="Script" uid="uid://o007m03viuhu" path="res://Scripts/start_screen.gd" id="1_i8r30"]
+
+[node name="Start screen" type="Node2D" unique_id=1500080815]
+script = ExtResource("1_i8r30")
+
+[node name="button manager" type="Control" parent="." unique_id=1904651555]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="button manager" unique_id=1489370788]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 181.0
+offset_right = 658.0
+offset_bottom = 275.0
+text = "Start"
+
+[node name="Options" type="Button" parent="button manager" unique_id=212086687]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 307.0
+offset_right = 663.0
+offset_bottom = 399.0
+text = "Options"
+
+[node name="Quit" type="Button" parent="button manager" unique_id=984148934]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 440.0
+offset_right = 666.0
+offset_bottom = 529.0
+text = "Exit"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=470722571]
+position = Vector2(568, 326)
+scale = Vector2(1.5, 1.5)
+zoom = Vector2(0.75, 0.75)
+
+[node name="Label" type="Label" parent="." unique_id=1874423196]
+offset_left = 516.0
+offset_top = 150.0
+offset_right = 591.0
+offset_bottom = 173.0
+text = "GAMING!!"
+
+[connection signal="pressed" from="button manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="button manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="button manager/Quit" to="." method="_on_quit_pressed"]

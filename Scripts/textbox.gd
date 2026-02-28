@@ -1,4 +1,3 @@
-class_name Textbox
 extends CanvasLayer
 
 #this signal tells player scene to stop accepting inputs when textbox is up.
@@ -48,6 +47,7 @@ func hide_box():
 # and who is speaking as an integer 0,1
 func queue_text(next_text,left,right,who):
 	text_queue.push_back([next_text,left,right,who])
+
 
 # makes box visible
 func show_box():

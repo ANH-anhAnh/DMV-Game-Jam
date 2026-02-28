@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://blit7ndrhmfg0"]
+
+[ext_resource type="Script" uid="uid://sbmuxg5qvdq3" path="res://Scripts/rich_text_label.gd" id="1_ldvqi"]
+
+[node name="PersonalText" type="RichTextLabel" unique_id=722791245]
+anchors_preset = -1
+anchor_right = 0.24400002
+anchor_bottom = 0.12200001
+offset_left = -4.5776367e-05
+offset_top = 1.0
+offset_right = -116.160034
+offset_bottom = -2.920002
+scale = Vector2(3.9080527, 1.0745398)
+fit_content = true
+script = ExtResource("1_ldvqi")
+
+[node name="SoundEffect" type="AudioStreamPlayer2D" parent="." unique_id=412103763]

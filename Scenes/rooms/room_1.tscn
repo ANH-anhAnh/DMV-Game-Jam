@@ -1,19 +1,30 @@
 [gd_scene format=3 uid="uid://dlnsevwebpb2"]
 
-[ext_resource type="Texture2D" uid="uid://bnvle51lkbqw6" path="res://Assets/rooms/initiation room.png" id="1_ojhq1"]
-[ext_resource type="PackedScene" uid="uid://k37hlke3k7x3" path="res://Scenes/Objects/up.tscn" id="1_ud0xu"]
-[ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="3_21tkn"]
+[ext_resource type="Texture2D" uid="uid://cwolm1ij0m3y" path="res://Assets/animation/anim1.png" id="1_21tkn"]
+[ext_resource type="Script" uid="uid://hvn5q6g443xj" path="res://Scripts/room_1.gd" id="1_nsq00"]
+[ext_resource type="PackedScene" uid="uid://bo0us3t228ym7" path="res://Scenes/textbox.tscn" id="3_21tkn"]
+[ext_resource type="Texture2D" uid="uid://deyj7300vbe1r" path="res://Assets/portraits/pastorshowing.png" id="4_nsq00"]
+[ext_resource type="PackedScene" uid="uid://blit7ndrhmfg0" path="res://Scenes/personal_text.tscn" id="5_a0jlh"]
 
 [node name="Room1" type="Node2D" unique_id=1381375635]
+script = ExtResource("1_nsq00")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=620613233]
 position = Vector2(320, 180)
-texture = ExtResource("1_ojhq1")
+texture = ExtResource("1_21tkn")
 
-[node name="up" parent="." unique_id=462097833 instance=ExtResource("1_ud0xu")]
-offset_left = 219.0
-offset_top = 92.0
-offset_right = 219.0
-offset_bottom = 92.0
+[node name="Textbox" parent="." unique_id=1069674369 instance=ExtResource("3_21tkn")]
+visible = false
 
-[node name="UI" parent="." unique_id=56917250 instance=ExtResource("3_21tkn")]
+[node name="PastorSpeech" type="Node2D" parent="." unique_id=684429586]
+
+[node name="PastorSpeaking" type="Sprite2D" parent="PastorSpeech" unique_id=81502802]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(320, 180)
+texture = ExtResource("4_nsq00")
+
+[node name="PersonalText" parent="PastorSpeech" unique_id=722791245 instance=ExtResource("5_a0jlh")]
+offset_left = 260.00006
+offset_top = 103.0
+offset_right = 293.2647
+offset_bottom = 138.36398

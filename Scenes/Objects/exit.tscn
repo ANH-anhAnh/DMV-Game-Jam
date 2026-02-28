@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://canmda7hvygfw"]
+
+[ext_resource type="Script" uid="uid://boow0qyimluup" path="res://Scripts/exit.gd" id="1_un0jh"]
+
+[node name="exit" type="Control" unique_id=617258739]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_un0jh")
+
+[node name="Button" type="Button" parent="." unique_id=1108427158]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

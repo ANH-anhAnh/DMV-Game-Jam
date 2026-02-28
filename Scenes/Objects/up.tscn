@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://k37hlke3k7x3"]
+
+[ext_resource type="Script" uid="uid://ddtu11m3w55cm" path="res://Scripts/up.gd" id="1_ih7og"]
+
+[node name="up" type="Control" unique_id=462097833]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ih7og")
+
+[node name="Button" type="Button" parent="." unique_id=1281682756]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

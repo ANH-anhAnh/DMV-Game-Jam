@@ -1,5 +1,4 @@
 extends Node2D
-class_name Map
 
 var layout1 = [
 	[0,1,0,0,0],
@@ -8,6 +7,9 @@ var layout1 = [
 	[1,"res://Scenes/rooms/room_2.tscn",1,1,0],
 	[0,"res://Scenes/rooms/room_1.tscn",0,0,0]
 ]
+
+var currentlayout
+
 var selfpos = [1,4]
 
 var cell_size := 50
@@ -15,8 +17,8 @@ var SquareScene := preload("res://Scenes/square.tscn")
 var CircleScene := preload("res://Scenes/circle.tscn")
 
 func _ready():
-	showmap(layout1)
-
+	pass
+	
 func showmap(layout):
 	var ypos = 0
 	var yp = 0
@@ -40,3 +42,8 @@ func showmap(layout):
 			xp += 1
 		ypos += cell_size
 		yp += 1
+		
+func sceneupdate(change):
+	selfpos[0] += change[0]
+	selfpos[1] += change[1]
+	get_tree().change_scene_to_file(layout1[selfpos[1]][selfpos[0]])

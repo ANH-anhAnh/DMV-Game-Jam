@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dswwu8kyafma"]
 
 [ext_resource type="Script" uid="uid://nwx3ut6b2fw" path="res://Scripts/ui.gd" id="1_m1v6r"]
+[ext_resource type="Texture2D" uid="uid://c1hbxotga4er" path="res://Assets/stomachicon.png" id="2_qdvrb"]
 
 [node name="UI" type="Control" unique_id=56917250]
 layout_mode = 3
@@ -24,6 +25,11 @@ offset_left = 29.0
 offset_top = 277.0
 offset_right = 44.0
 offset_bottom = 317.0
-color = Color(1.0039686, 0.61004496, 0.5588952, 1)
+color = Color(0.5697106, 0.11288785, 0.32239792, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1874038094]
+position = Vector2(81, 298)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_qdvrb")
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

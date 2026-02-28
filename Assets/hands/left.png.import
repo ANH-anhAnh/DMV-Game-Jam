@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxfy14som7k78"
-path="res://.godot/imported/icon.svg-45dfe4c7701e9e6756416cc8eea728b9.ctex"
+uid="uid://cp2nasgydwmb8"
+path="res://.godot/imported/left.png-8e76734cf1c25183fafc87473ef916df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Audio/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-45dfe4c7701e9e6756416cc8eea728b9.ctex"]
+source_file="res://Assets/hands/left.png"
+dest_files=["res://.godot/imported/left.png-8e76734cf1c25183fafc87473ef916df.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

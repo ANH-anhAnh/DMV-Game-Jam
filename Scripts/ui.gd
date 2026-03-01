@@ -31,6 +31,7 @@ func _ready() -> void:
 ##map button
 func _on_button_pressed() -> void:
 	if(!Map.shown):
+		$map.play()
 		var sq = SquareScene.instantiate()
 		add_child(sq)
 		var rect = sq.get_node("ColorRect")
@@ -42,6 +43,7 @@ func _on_button_pressed() -> void:
 		$CanvasLayer/Button2.disabled = true
 		Map.disp()
 	else:
+		$map2.play()
 		block.queue_free()
 		$CanvasLayer/left.visible = true
 		$CanvasLayer/right.visible = true
@@ -51,6 +53,7 @@ func _on_button_pressed() -> void:
 ## parasite scanner button
 func _on_button_2_pressed() -> void:
 	if(!parasite):
+		$gurgle.play()
 		parasite = 1
 		var sq = SquareScene.instantiate()
 		add_child(sq)
@@ -68,7 +71,7 @@ func _on_button_2_pressed() -> void:
 		
 ## updates the hunger bar
 func update():
-	Map.hunger = Map.hunger - (Map.stomach_parasites)
+	Map.hunger = Map.hunger - (Map.stomach_parasites * 0.25)
 	if(Map.hunger <= 0):
 		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 	var newheight = (260.0 / 100.0) * Map.hunger

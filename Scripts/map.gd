@@ -10,7 +10,7 @@ var collected_parasites : int
 var gate = 0
 var lethal = 0
 var syringe = 0
-var key = 0
+var key = 1
 ## level layout, contains all room scenes 
 var layout1 = [
 	["res://Assets/rooms/outside.png","res://Scenes/rooms/sewergate.tscn",0,0,0],

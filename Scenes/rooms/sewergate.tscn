@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="2_hqjgt"]
 [ext_resource type="PackedScene" uid="uid://canmda7hvygfw" path="res://Scenes/Objects/exit.tscn" id="3_ibvaf"]
 [ext_resource type="PackedScene" uid="uid://bo0us3t228ym7" path="res://Scenes/textbox.tscn" id="5_i7iop"]
+[ext_resource type="AudioStream" uid="uid://cqkmvxww7hioi" path="res://Assets/Audio/sfx/sword_drop.wav" id="7_7yilf"]
 
 [node name="room" type="Node2D" unique_id=1463458449]
 script = ExtResource("1_ibvaf")
@@ -23,3 +24,7 @@ offset_bottom = 291.0
 [node name="UI" parent="." unique_id=56917250 instance=ExtResource("2_hqjgt")]
 
 [node name="Textbox" parent="." unique_id=1069674369 instance=ExtResource("5_i7iop")]
+visible = true
+
+[node name="clang" type="AudioStreamPlayer2D" parent="." unique_id=1472541409]
+stream = ExtResource("7_7yilf")

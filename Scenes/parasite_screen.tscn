@@ -67,6 +67,8 @@ offset_bottom = 349.0
 
 [node name="Textbox" parent="." unique_id=1069674369 instance=ExtResource("6_sip22")]
 
+[node name="squish" type="AudioStreamPlayer2D" parent="." unique_id=1936671623]
+
 [connection signal="body_entered" from="Collisions/CheckoutArea" to="ParasiteGameScript" method="_on_checkout_area_body_entered"]
 [connection signal="body_entered" from="Collisions/StomachArea" to="ParasiteGameScript" method="_on_stomach_area_body_entered"]
 [connection signal="body_exited" from="Collisions/StomachArea" to="ParasiteGameScript" method="_on_stomach_area_body_exited"]

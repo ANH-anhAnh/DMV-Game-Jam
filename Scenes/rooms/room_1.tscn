@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://b0nrat4cj0hhr" path="res://Assets/animation/anim4.png" id="6_iqkad"]
 [ext_resource type="Texture2D" uid="uid://61206tbhb7ag" path="res://Assets/animation/anim5.png" id="7_7e4v8"]
 [ext_resource type="PackedScene" uid="uid://bojol3df7kftc" path="res://Scenes/textboxpastor.tscn" id="11_pkyi0"]
+[ext_resource type="AudioStream" uid="uid://d0vi8tk2sw0s6" path="res://Assets/Audio/sfx/clothing_1.wav" id="12_lxfl6"]
+[ext_resource type="AudioStream" uid="uid://bsni4fboetvq4" path="res://Assets/Audio/sfx/splat_quick.wav" id="13_iqkad"]
+[ext_resource type="AudioStream" uid="uid://f267rv45ypfd" path="res://Assets/Audio/sfx/punch.wav" id="14_7e4v8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tuhkx"]
 animations = [{
@@ -79,5 +82,12 @@ color = Color(0, 0, 0, 1)
 [node name="TextboxPastor" parent="." unique_id=1653236772 instance=ExtResource("11_pkyi0")]
 
 [node name="whoosh" type="AudioStreamPlayer2D" parent="." unique_id=1797874768]
+stream = ExtResource("12_lxfl6")
+
+[node name="inject" type="AudioStreamPlayer2D" parent="." unique_id=1217807923]
+stream = ExtResource("13_iqkad")
+
+[node name="punch" type="AudioStreamPlayer2D" parent="." unique_id=623424195]
+stream = ExtResource("14_7e4v8")
 
 [connection signal="animation_finished" from="BG" to="." method="_on_bg_animation_finished"]

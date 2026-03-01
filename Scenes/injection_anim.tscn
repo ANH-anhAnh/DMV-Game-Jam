@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://7p7hqcysbhkh"]
+
+[ext_resource type="Texture2D" uid="uid://voqealgto25y" path="res://Assets/arm.png" id="2_ofke0"]
+[ext_resource type="Texture2D" uid="uid://cay0b8rs51yf7" path="res://Assets/liquid.png" id="3_bq5lc"]
+[ext_resource type="Texture2D" uid="uid://po1ts3bhoydd" path="res://Assets/syringe1.png" id="4_oesvj"]
+[ext_resource type="Texture2D" uid="uid://by6i53vpmb6a2" path="res://Assets/syringe2.png" id="5_35n83"]
+
+[sub_resource type="Animation" id="Animation_ofke0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Syringe1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_0hoxp"]
+resource_name = "injection"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Syringe1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 0.8),
+"transitions": PackedFloat32Array(3.6050076, 0.9999998),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(52, 4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 1.8),
+"transitions": PackedFloat32Array(2.639016, 1, 2.8284273, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(320, 220), Vector2(320, 180)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ofke0"]
+_data = {
+&"RESET": SubResource("Animation_ofke0"),
+&"injection": SubResource("Animation_0hoxp")
+}
+
+[node name="InjectionAnim" type="CanvasLayer" unique_id=1685995140]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=282935293]
+libraries/ = SubResource("AnimationLibrary_ofke0")
+
+[node name="Sprites" type="Node2D" parent="." unique_id=1573413770]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(320, 220)
+
+[node name="Arm" type="Sprite2D" parent="Sprites" unique_id=1474654881]
+texture = ExtResource("2_ofke0")
+
+[node name="Liquid" type="Sprite2D" parent="Sprites" unique_id=207855141]
+texture = ExtResource("3_bq5lc")
+
+[node name="Syringe1" type="Sprite2D" parent="Sprites" unique_id=377462665]
+texture = ExtResource("4_oesvj")
+
+[node name="Syringe2" type="Sprite2D" parent="Sprites" unique_id=947871308]
+texture = ExtResource("5_35n83")

@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var textbox := $Textbox
-@onready var pastor_speech_text : RichTextLabel = $PastorSpeech/PersonalText
+#@onready var pastor_speech_text : RichTextLabel = $PastorSpeech/PersonalText
 @onready var pastor_sprite := $PastorSpeech/PastorSpeaking
 @onready var text_timer := $TextTimer 
 
@@ -24,10 +24,19 @@ func _ready() -> void:
 	# vision fades __-------------------------------------------------------------------------------
 	await wait_for_next_event(0.1)
 	var tween = get_tree().create_tween()
-	tween.tween_property($ColorRect, "modulate", Color(1, 1, 1, 1), 1)\
+	tween.tween_property($ColorRect, "modulate", Color(1, 1, 1, 1), 2.5)\
 	.set_trans(Tween.TRANS_QUAD)\
 	.set_ease(Tween.EASE_OUT)\
 	.from(Color(1, 1, 1, 0))
+	
+	tween.tween_property($ColorRect, "modulate", Color(1, 1, 1, 0.6), 3)\
+	.set_trans(Tween.TRANS_QUAD)\
+	.set_ease(Tween.EASE_OUT)\
+	.from(Color(1, 1, 1, 1))
+	tween.tween_property($ColorRect, "modulate", Color(1, 1, 1, 1), 1)\
+	.set_trans(Tween.TRANS_QUAD)\
+	.set_ease(Tween.EASE_OUT)\
+	.from(Color(1, 1, 1, 0.7))
 	
 	textbox.queue_text(
 		"This one’s always been a pain in the arse, I tell ya. Inject him and get it over with.",
@@ -48,18 +57,36 @@ func _ready() -> void:
 		#So I beg you, children. Serve the Body faithfully, and it will serve you back."
 	#pastor_speech_text.text = "For your fathers, lovers, mothers. For me. For you."
 	
-	# ----------------------------------------------------------------------------------------------
+	# injection animation --------------------------------------------------------------------------
 	# wait X amount of seconds after pastor is annoyed. makes room for pastor's speech	
 	await wait_for_next_event(4)
 	
 	textbox.queue_text("Easy now. Don’t resist.", "default", "default", 0)
-	
 	textbox.queue_text("*You feel a pinching sensation in your arm.", "default", "default", 0)
+	
+	await wait_for_next_event(0.1)
+	$InjectionAnim.get_child(0).play("injection")
+	await wait_for_next_event(1.8)
+
 	textbox.queue_text("Suddenly, you jolt up and push past the pastor, running towards the exit.", "default", "default", 0)
 	
+	await wait_for_next_event(0.1)
+	var tween3 = get_tree().create_tween()
+	tween3.tween_property($ColorRect, "modulate", Color(1, 1, 1, 0), 0.5)\
+	.set_trans(Tween.TRANS_QUAD)\
+	.set_ease(Tween.EASE_OUT)\
+	.from(Color(1, 1, 1, 1))
+	
+	await wait_for_next_event(0.1)
+	$BG.play("running")
 # --------------------------------------------------------------------------------------------------
 func wait_for_next_event(time : float):
 	await get_tree().create_timer(.1, false).timeout
 	while (textbox.start.text != ""):
 		await get_tree().create_timer(.1, false).timeout
 	await get_tree().create_timer(time, false).timeout
+
+
+func _on_bg_animation_finished() -> void:
+	var change = [0,-1]
+	Map.sceneupdate(change)

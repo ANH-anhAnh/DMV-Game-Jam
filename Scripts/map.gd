@@ -13,7 +13,7 @@ var explored = []
 var playercircle
 var currentlayout
 
-var selfpos = [1,3]
+var selfpos = [1,4]
 var shown = 0
 
 var cell_size := 50

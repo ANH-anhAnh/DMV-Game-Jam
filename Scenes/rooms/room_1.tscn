@@ -2,19 +2,62 @@
 
 [ext_resource type="Texture2D" uid="uid://cwolm1ij0m3y" path="res://Assets/animation/anim1.png" id="1_21tkn"]
 [ext_resource type="Script" uid="uid://hvn5q6g443xj" path="res://Scripts/room_1.gd" id="1_nsq00"]
+[ext_resource type="Texture2D" uid="uid://dn4tl887v61mh" path="res://Assets/rooms/room 2.png" id="2_hf4m2"]
 [ext_resource type="PackedScene" uid="uid://bo0us3t228ym7" path="res://Scenes/textbox.tscn" id="3_21tkn"]
 [ext_resource type="Texture2D" uid="uid://deyj7300vbe1r" path="res://Assets/portraits/pastorshowing.png" id="4_nsq00"]
-[ext_resource type="PackedScene" uid="uid://blit7ndrhmfg0" path="res://Scenes/personal_text.tscn" id="5_a0jlh"]
+[ext_resource type="Texture2D" uid="uid://dvfgv8yepkqky" path="res://Assets/animation/anim2.png" id="4_pkyi0"]
+[ext_resource type="PackedScene" uid="uid://7p7hqcysbhkh" path="res://Scenes/injection_anim.tscn" id="5_a0jlh"]
+[ext_resource type="Texture2D" uid="uid://hiwscxaqj005" path="res://Assets/animation/anim3.png" id="5_lxfl6"]
+[ext_resource type="Texture2D" uid="uid://b0nrat4cj0hhr" path="res://Assets/animation/anim4.png" id="6_iqkad"]
+[ext_resource type="Texture2D" uid="uid://61206tbhb7ag" path="res://Assets/animation/anim5.png" id="7_7e4v8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tuhkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_21tkn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("1_21tkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pkyi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lxfl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iqkad")
+}, {
+"duration": 2.0,
+"texture": ExtResource("7_7e4v8")
+}],
+"loop": false,
+"name": &"running",
+"speed": 3.0
+}]
 
 [node name="Room1" type="Node2D" unique_id=1381375635]
 script = ExtResource("1_nsq00")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=620613233]
+[node name="Room2" type="Sprite2D" parent="." unique_id=104256941]
 position = Vector2(320, 180)
-texture = ExtResource("1_21tkn")
+texture = ExtResource("2_hf4m2")
+
+[node name="BG" type="AnimatedSprite2D" parent="." unique_id=53980369]
+position = Vector2(320, 180)
+sprite_frames = SubResource("SpriteFrames_tuhkx")
+animation = &"running"
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
 
 [node name="Textbox" parent="." unique_id=1069674369 instance=ExtResource("3_21tkn")]
-visible = false
 
 [node name="PastorSpeech" type="Node2D" parent="." unique_id=684429586]
 
@@ -23,14 +66,13 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(320, 180)
 texture = ExtResource("4_nsq00")
 
-[node name="PersonalText" parent="PastorSpeech" unique_id=722791245 instance=ExtResource("5_a0jlh")]
-offset_left = 260.00006
-offset_top = 103.0
-offset_right = 293.2647
-offset_bottom = 138.36398
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=104464586]
-visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 10
 offset_right = 641.0
 offset_bottom = 361.0
 color = Color(0, 0, 0, 1)
+
+[node name="InjectionAnim" parent="." unique_id=1685995140 instance=ExtResource("5_a0jlh")]
+
+[connection signal="animation_finished" from="BG" to="." method="_on_bg_animation_finished"]

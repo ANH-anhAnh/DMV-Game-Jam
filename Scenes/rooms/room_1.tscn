@@ -28,3 +28,9 @@ offset_left = 260.00006
 offset_top = 103.0
 offset_right = 293.2647
 offset_bottom = 138.36398
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=104464586]
+visible = false
+offset_right = 641.0
+offset_bottom = 361.0
+color = Color(0, 0, 0, 1)

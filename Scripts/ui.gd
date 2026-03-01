@@ -3,10 +3,17 @@ extends Control
 var SquareScene := preload("res://Scenes/square.tscn")
 var block
 var hunger = 100
-
 var maximum = 100
 ## sets hunger bar
 func _ready() -> void:
+	var mapaccess = Map.mapaccess
+	if mapaccess:
+		$CanvasLayer/Button.disabled = false
+		$CanvasLayer/Button.visible = true
+	else:
+		$CanvasLayer/Button.disabled = true
+		$CanvasLayer/Button.visible = false
+	
 	var newheight = (260.0 / 100.0) * hunger
 	var heightdiff = newheight - $CanvasLayer/ColorRect.size.y
 

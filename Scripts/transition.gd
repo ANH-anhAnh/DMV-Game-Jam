@@ -19,3 +19,7 @@ func _on_animation_finished(anim_name):
 func transition():
 	color_rect.visible = true
 	animation_player.play("fade_to_black")
+	$step1.play()
+	await get_tree().create_timer(.4, false).timeout
+	$step2.play()
+	

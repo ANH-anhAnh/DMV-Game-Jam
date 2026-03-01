@@ -36,6 +36,7 @@ func _on_button_button_down() -> void:
 	dragging = true
 	freeze = true
 	offset = get_global_mouse_position() - global_position
+	$squish.play()
 
 func _on_button_button_up() -> void:
 	freeze = false

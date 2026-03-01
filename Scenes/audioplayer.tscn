@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://8sc4053mareu"]
+
+[ext_resource type="Script" uid="uid://b0c4e5we136xa" path="res://Scripts/audioplayer.gd" id="1_c5c6f"]
+[ext_resource type="AudioStream" uid="uid://bixfe6ssqcxj6" path="res://Assets/Audio/music/water_dripping.mp3" id="2_c5c6f"]
+
+[node name="audioplayer" type="Node" unique_id=929680550]
+script = ExtResource("1_c5c6f")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1961801187]
+stream = ExtResource("2_c5c6f")
+volume_db = -23.972
+autoplay = true
+parameters/looping = true

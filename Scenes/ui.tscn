@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bblv5ya0u3q8" path="res://Assets/map.png" id="3_smcll"]
 [ext_resource type="Texture2D" uid="uid://dcfoagh8kl4wo" path="res://Assets/hands/right2.png" id="4_q7pk6"]
 [ext_resource type="Texture2D" uid="uid://bbo13uv8rqv73" path="res://Assets/nanobot.png" id="4_ryf15"]
+[ext_resource type="AudioStream" uid="uid://tr6v0k8jse2m" path="res://Assets/Audio/sfx/map_open.wav" id="8_ryf15"]
+[ext_resource type="AudioStream" uid="uid://8qe2gs8y76da" path="res://Assets/Audio/sfx/map_close.wav" id="9_mmixe"]
 
 [node name="UI" type="Control" unique_id=56917250]
 layout_mode = 3
@@ -59,6 +61,15 @@ texture = ExtResource("3_2246s")
 [node name="right" type="Sprite2D" parent="CanvasLayer" unique_id=409852157]
 position = Vector2(290, 181)
 texture = ExtResource("4_q7pk6")
+
+[node name="map" type="AudioStreamPlayer2D" parent="." unique_id=1619076357]
+stream = ExtResource("8_ryf15")
+
+[node name="map2" type="AudioStreamPlayer2D" parent="." unique_id=1165576941]
+stream = ExtResource("9_mmixe")
+
+[node name="gurgle" type="AudioStreamPlayer2D" parent="." unique_id=138088657]
+stream = ExtResource("9_mmixe")
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]

@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://bgusnp0i358q2"]
 
 [ext_resource type="Script" uid="uid://d2wyipk8gn6kk" path="res://Scripts/map.gd" id="1_ci6au"]
+[ext_resource type="AudioStream" uid="uid://cuxhp4t2rfpiy" path="res://Assets/Audio/sfx/foley_footstep_gravel_2.wav" id="2_p3ir5"]
+[ext_resource type="AudioStream" uid="uid://deacf1oq4xl0c" path="res://Assets/Audio/sfx/foley_footstep_gravel_3.wav" id="3_myvm1"]
 
 [node name="map" type="Node2D" unique_id=388322970]
 script = ExtResource("1_ci6au")
+
+[node name="step1" type="AudioStreamPlayer2D" parent="." unique_id=2047435150]
+stream = ExtResource("2_p3ir5")
+
+[node name="step2" type="AudioStreamPlayer2D" parent="." unique_id=1362178607]
+stream = ExtResource("3_myvm1")

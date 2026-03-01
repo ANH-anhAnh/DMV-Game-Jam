@@ -8,6 +8,7 @@ extends Node2D
 
 
 func _ready() -> void:
+	
 	print(self)
 	print(get_parent())
 	print(get_children())
@@ -21,6 +22,8 @@ func _ready() -> void:
 		"Hah! You're out of your goddamn mind. There’s something out there, I tell ya! SOMETHING GREATER THAN THIS HOLED UP STINKHOLE. EVERYONE OUT THERE-",
 		"default", "pastor", 0
 	)
+	await wait_for_next_event(0.1)
+	$punch.play()
 	textbox.queue_text(
 		"*You feel a sharp pain at the back of your head. Your vision slowly fades.", 
 		"default", "pastor", 0
@@ -71,6 +74,8 @@ func _ready() -> void:
 	
 	await wait_for_next_event(0.1)
 	$InjectionAnim.get_child(0).play("injection")
+	await get_tree().create_timer(.6, false).timeout
+	$inject.play()
 	await wait_for_next_event(1.8)
 
 	textbox.queue_text("The pains jolts you awake. You push past the pastor towards the exit.", "default", "default", 0)

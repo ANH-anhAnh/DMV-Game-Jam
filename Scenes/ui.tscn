@@ -18,6 +18,7 @@ script = ExtResource("1_m1v6r")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1020113644]
 
 [node name="parasite screen" parent="CanvasLayer" unique_id=1937903932 instance=ExtResource("2_q7pk6")]
+visible = false
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=1625085568]
 z_index = 2

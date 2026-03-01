@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bwtctiwd3xlth"]
+
+[ext_resource type="Texture2D" uid="uid://dexo2mo2unsc7" path="res://Assets/rooms/passage.png" id="1_aykl1"]
+[ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="2_7x8ll"]
+[ext_resource type="PackedScene" uid="uid://dhmh50s2h2tdl" path="res://Scenes/Objects/left.tscn" id="2_vi3k5"]
+[ext_resource type="PackedScene" uid="uid://ct1ss8ykllfx5" path="res://Scenes/Objects/right.tscn" id="3_ppnbi"]
+
+[node name="room" type="Node2D" unique_id=1463458449]
+metadata/_edit_horizontal_guides_ = [-131.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1766124295]
+position = Vector2(320, 180)
+texture = ExtResource("1_aykl1")
+
+[node name="left" parent="." unique_id=462097833 instance=ExtResource("2_vi3k5")]
+offset_left = 240.0
+offset_top = 117.0
+offset_right = 240.0
+offset_bottom = 117.0
+scale = Vector2(0.7344462, 0.6402878)
+
+[node name="right" parent="." unique_id=433556962 instance=ExtResource("3_ppnbi")]
+offset_left = 84.0
+offset_top = 274.0
+offset_right = 84.0
+offset_bottom = 274.0
+scale = Vector2(2.4541035, 0.48775643)
+
+[node name="UI" parent="." unique_id=56917250 instance=ExtResource("2_7x8ll")]

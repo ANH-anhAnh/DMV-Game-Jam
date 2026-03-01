@@ -2,7 +2,7 @@ extends Control
 
 var SquareScene := preload("res://Scenes/square.tscn")
 var block
-var hunger = 100
+var hunger = Map.hunger
 var maximum = 100
 var parasite = 0
 ## sets hunger bar

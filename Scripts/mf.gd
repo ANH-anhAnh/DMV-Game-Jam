@@ -1,11 +1,18 @@
 extends Node2D
+var SquareScene := preload("res://Scenes/square.tscn")
 
 func _ready() -> void:
 	if Map.food[Map.selfpos[1]][Map.selfpos[0]] == 0:
 		$Sprite2D.visible = false
 		$Button.disabled = true
+		
 
 func _on_button_pressed() -> void:
+	var sq = SquareScene.instantiate()
+	add_child(sq)
+	var rect = sq.get_node("ColorRect")
+	rect.size = Vector2(640, 360)
+	rect.color = Color(1.0, 0.0, 0.0, 0.0)
 	Map.food[Map.selfpos[1]][Map.selfpos[0]] = 0
 	$Sprite2D.visible = false
 	$Button.disabled = true
@@ -15,10 +22,11 @@ func _on_button_pressed() -> void:
 	$Textbox.queue_text("HA. HAHA. HAHAHAH. You know what… I like you. Take this","default","default",1)
 	$Textbox.queue_text("NANOBOT Acquired","default","default",0)
 	$Textbox.queue_text("MAP Acquired","default","default",0)
-	$Textbox.queue_text("It will keep the parasites at bay. However, you must find the remote for it. Trust me. Or don’t. I’ve got a Cardinal to flay.","default","default",1)
+	$Textbox.queue_text("It will keep the parasites at bay. However, you must find the remote for it. Trust me. Or don’t. I can buy you some time.","default","default",1)
 	$Textbox.queue_text("*The mysterious figure leaves*","default","default",0)
 	$Textbox.queue_text(" What a bloodydamn psycho…","default","default",0)
 	await wait_for_next_event(.1)
+	
 	Map.mapaccess = 1
 	Map.mf = 1
 	get_node("../UI/CanvasLayer/Button").disabled = false

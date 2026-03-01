@@ -6,9 +6,9 @@ var num_parasites : int
 
 ## level layout, contains all room scenes 
 var layout1 = [
-	[0,1,0,0,0],
-	[1,1,1,1,0],
-	[1,0,0,"res://Scenes/rooms/upright.tscn","res://Scenes/rooms/remotesewerroom.tscn"],
+	[0,"res://Scenes/rooms/sewergate.tscn",0,0,0],
+	["res://Scenes/rooms/sewerroom.tscn","res://Scenes/rooms/rightleftup.tscn","res://Scenes/rooms/rightleft.tscn","res://Scenes/rooms/leftturn.tscn",0],
+	[0,0,0,"res://Scenes/rooms/upright.tscn","res://Scenes/rooms/remotesewerroom.tscn"],
 	["res://Scenes/rooms/sewerroom.tscn","res://Scenes/rooms/room_2.tscn","res://Scenes/rooms/longchasmpipe.tscn","res://Scenes/rooms/bendrighttoup.tscn",0],
 	[0,"res://Scenes/rooms/room_1.tscn",0,0,0]
 ]
@@ -22,11 +22,11 @@ var food = [
 ]
 ##array containing explored coordinates
 var explored = []
-
+var hunger = 100
 var playercircle
 var currentlayout
 var mf = 0
-var selfpos = [1,3]
+var selfpos = [1,4]
 var shown = 0
 var parasiteaccess = 0
 var mapaccess = 0

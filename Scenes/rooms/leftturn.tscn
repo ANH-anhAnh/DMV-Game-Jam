@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ci8bwub4g10vq"]
+
+[ext_resource type="Texture2D" uid="uid://c4wf53p23oxim" path="res://Assets/rooms/leftturn.png" id="1_l4xxj"]
+[ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="2_srbyn"]
+[ext_resource type="PackedScene" uid="uid://canmda7hvygfw" path="res://Scenes/Objects/exit.tscn" id="3_ye4jm"]
+[ext_resource type="PackedScene" uid="uid://dhmh50s2h2tdl" path="res://Scenes/Objects/left.tscn" id="4_lmo0g"]
+
+[node name="room" type="Node2D" unique_id=1463458449]
+metadata/_edit_horizontal_guides_ = [-131.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1766124295]
+position = Vector2(320, 180)
+texture = ExtResource("1_l4xxj")
+
+[node name="exit" parent="." unique_id=617258739 instance=ExtResource("3_ye4jm")]
+offset_left = 104.0
+offset_top = 289.0
+offset_right = 104.0
+offset_bottom = 289.0
+
+[node name="left" parent="." unique_id=462097833 instance=ExtResource("4_lmo0g")]
+offset_left = 238.0
+offset_top = 68.0
+offset_right = 238.0
+offset_bottom = 68.0
+scale = Vector2(0.627586, 0.7681159)
+
+[node name="UI" parent="." unique_id=56917250 instance=ExtResource("2_srbyn")]

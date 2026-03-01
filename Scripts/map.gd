@@ -17,7 +17,7 @@ var food = [
 	[0,0,0,0,0],
 	[0,0,0,0,0],
 	[0,0,0,0,0],
-	[1,0,0,0,0],
+	[1,1,0,0,0],
 	[0,0,0,0,0]
 ]
 ##array containing explored coordinates
@@ -26,9 +26,9 @@ var explored = []
 var playercircle
 var currentlayout
 
-var selfpos = [1,4]
+var selfpos = [1,3]
 var shown = 0
-
+var mapaccess = 0
 var cell_size := 50
 var SquareScene := preload("res://Scenes/square.tscn")
 var CircleScene := preload("res://Scenes/circle.tscn")

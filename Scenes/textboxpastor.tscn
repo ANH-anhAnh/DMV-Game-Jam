@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bojol3df7kftc"]
+
+[ext_resource type="Script" uid="uid://cm7dttlwx84yv" path="res://Scripts/textboxpastor.gd" id="1_yqbxc"]
+[ext_resource type="Texture2D" uid="uid://dlljedh0hu60c" path="res://Assets/portraits/pastor.png" id="2_5a1sk"]
+[ext_resource type="Texture2D" uid="uid://xhalen1r824" path="res://Assets/portraits/pastorlow.png" id="3_jl8l0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_48yse"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5a1sk")
+}],
+"loop": true,
+"name": &"pastor",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jl8l0")
+}],
+"loop": true,
+"name": &"pastor_annoyed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x01y5"]
+region = Rect2(0, 320, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5a1sk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x01y5")
+}],
+"loop": true,
+"name": &"flynn",
+"speed": 5.0
+}]
+
+[node name="TextboxPastor" type="CanvasLayer" unique_id=1069674369]
+process_mode = 3
+script = ExtResource("1_yqbxc")
+
+[node name="TextboxContainer" type="MarginContainer" parent="." unique_id=1253367587]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_top = -331.0
+offset_right = -256.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 129
+theme_override_constants/margin_right = -54
+theme_override_constants/margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer" unique_id=1855572282]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer" unique_id=2052084899]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer" unique_id=1293460067]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer" unique_id=1664171222]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "Testing"
+autowrap_mode = 3
+
+[node name="right" type="AnimatedSprite2D" parent="." unique_id=1852737292]
+visible = false
+z_index = -1
+position = Vector2(320, 180)
+sprite_frames = SubResource("SpriteFrames_48yse")
+animation = &"pastor"
+
+[node name="left" type="AnimatedSprite2D" parent="." unique_id=512262406]
+z_index = -1
+position = Vector2(60, 163)
+scale = Vector2(6.85417, 6.5)
+sprite_frames = SubResource("SpriteFrames_5a1sk")

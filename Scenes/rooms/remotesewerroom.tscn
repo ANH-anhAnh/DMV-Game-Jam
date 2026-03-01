@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dgust64skxgj8" path="res://Assets/rooms/sewerroom.png" id="1_udmiu"]
 [ext_resource type="PackedScene" uid="uid://dhmh50s2h2tdl" path="res://Scenes/Objects/left.tscn" id="3_3ijrd"]
 [ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="4_2jog6"]
+[ext_resource type="PackedScene" uid="uid://d7542eipvfnp" path="res://Scenes/Objects/remote.tscn" id="4_udmiu"]
 
 [node name="room" type="Node2D" unique_id=1463458449]
 metadata/_edit_horizontal_guides_ = [-131.0]
@@ -19,3 +20,7 @@ offset_top = 255.00003
 offset_right = 87.99999
 offset_bottom = 255.00003
 scale = Vector2(2.2165384, 0.56466657)
+
+[node name="apple" parent="." unique_id=821114397 instance=ExtResource("4_udmiu")]
+position = Vector2(496, 219)
+scale = Vector2(0.48669267, 0.5398776)

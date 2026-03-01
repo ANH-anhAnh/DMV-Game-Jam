@@ -8,7 +8,7 @@ var num_parasites : int
 var layout1 = [
 	[0,1,0,0,0],
 	[1,1,1,1,0],
-	[1,0,0,1,0],
+	[1,0,0,"res://Scenes/rooms/upright.tscn","res://Scenes/rooms/remotesewerroom.tscn"],
 	["res://Scenes/rooms/sewerroom.tscn","res://Scenes/rooms/room_2.tscn","res://Scenes/rooms/longchasmpipe.tscn","res://Scenes/rooms/bendrighttoup.tscn",0],
 	[0,"res://Scenes/rooms/room_1.tscn",0,0,0]
 ]

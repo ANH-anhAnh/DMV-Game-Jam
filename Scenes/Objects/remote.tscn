@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d7542eipvfnp"]
+[gd_scene format=3 uid="uid://dtk8jjl8rhbij"]
 
 [ext_resource type="Script" uid="uid://wyxucit6mavv" path="res://Scripts/remote.gd" id="1_eprue"]
 [ext_resource type="Texture2D" uid="uid://bi6ydqpcxmrrb" path="res://Assets/remote.png" id="2_3d2jy"]
@@ -8,7 +8,7 @@
 script = ExtResource("1_eprue")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=282321886]
-scale = Vector2(0.38060075, 0.42048314)
+scale = Vector2(1.7, 1.875)
 texture = ExtResource("2_3d2jy")
 
 [node name="Textbox" parent="." unique_id=1069674369 instance=ExtResource("3_3d2jy")]

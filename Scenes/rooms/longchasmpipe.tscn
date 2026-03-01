@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c4lc6k46t7te0"]
+
+[ext_resource type="Texture2D" uid="uid://bo1kxrhuddl2n" path="res://Assets/rooms/straightpipe.png" id="1_4bors"]
+[ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="2_3c5o8"]
+[ext_resource type="PackedScene" uid="uid://ct1ss8ykllfx5" path="res://Scenes/Objects/right.tscn" id="3_kmvuj"]
+[ext_resource type="PackedScene" uid="uid://dhmh50s2h2tdl" path="res://Scenes/Objects/left.tscn" id="4_635w2"]
+
+[node name="room" type="Node2D" unique_id=1463458449]
+metadata/_edit_horizontal_guides_ = [-131.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1766124295]
+position = Vector2(320, 180)
+texture = ExtResource("1_4bors")
+
+[node name="right" parent="." unique_id=462097833 instance=ExtResource("3_kmvuj")]
+offset_left = 122.0
+offset_top = 88.0
+offset_right = 122.0
+offset_bottom = 88.0
+scale = Vector2(0.88095254, 0.72972983)
+
+[node name="left" parent="." unique_id=1265943416 instance=ExtResource("4_635w2")]
+offset_left = -25.0
+offset_top = 280.0
+offset_right = -25.0
+offset_bottom = 280.0
+scale = Vector2(3.440567, 0.44528878)
+
+[node name="UI" parent="." unique_id=56917250 instance=ExtResource("2_3c5o8")]

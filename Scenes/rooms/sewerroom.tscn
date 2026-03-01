@@ -12,8 +12,6 @@ metadata/_edit_horizontal_guides_ = [-131.0]
 position = Vector2(320, 180)
 texture = ExtResource("1_i3yqd")
 
-[node name="UI" parent="." unique_id=56917250 instance=ExtResource("2_rbavh")]
-
 [node name="right" parent="." unique_id=462097833 instance=ExtResource("3_rbavh")]
 offset_left = 60.000023
 offset_top = 273.0
@@ -23,3 +21,5 @@ scale = Vector2(2.52, 0.48000002)
 
 [node name="hamburger" parent="." unique_id=821114397 instance=ExtResource("4_6uweg")]
 position = Vector2(502, 230)
+
+[node name="UI" parent="." unique_id=56917250 instance=ExtResource("2_rbavh")]

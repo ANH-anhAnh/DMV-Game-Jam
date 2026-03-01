@@ -69,6 +69,8 @@ func _on_button_2_pressed() -> void:
 ## updates the hunger bar
 func update():
 	Map.hunger = Map.hunger - (Map.stomach_parasites)
+	if(Map.hunger <= 0):
+		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 	var newheight = (260.0 / 100.0) * Map.hunger
 	var heightdiff = newheight - $CanvasLayer/ColorRect.size.y
 
@@ -76,7 +78,8 @@ func update():
 
 	tween.tween_property($CanvasLayer/ColorRect, "size:y", newheight, 0.5)
 	tween.parallel().tween_property($CanvasLayer/ColorRect,"position:y",$CanvasLayer/ColorRect.position.y - heightdiff,0.5)
-	await get_tree().create_timer(5, false).timeout
+	if is_instance_valid(self) and is_inside_tree():
+		await get_tree().create_timer(5, false).timeout
 	hungry = 0
 
 var hungry = 0

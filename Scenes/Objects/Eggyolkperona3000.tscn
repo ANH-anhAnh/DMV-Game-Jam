@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://diwoi1y546pv6"]
+
+[ext_resource type="Script" uid="uid://t8owcrgq60m1" path="res://Scripts/eggyolkperona_3000.gd" id="1_lc7a2"]
+[ext_resource type="Texture2D" uid="uid://bbk84w6vva3cy" path="res://Assets/peronafull.png" id="2_lc7a2"]
+[ext_resource type="PackedScene" uid="uid://bo0us3t228ym7" path="res://Scenes/textbox.tscn" id="3_0ihhk"]
+
+[node name="perona" type="Node2D" unique_id=821114397]
+script = ExtResource("1_lc7a2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=282321886]
+position = Vector2(-163, -27)
+texture = ExtResource("2_lc7a2")
+
+[node name="Button" type="Button" parent="." unique_id=495931569]
+offset_left = -22.0
+offset_top = -43.99999
+offset_right = 13.0
+offset_bottom = -10.999989
+scale = Vector2(1.496987, 2.424131)
+flat = true
+
+[node name="Textbox" parent="." unique_id=1069674369 instance=ExtResource("3_0ihhk")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

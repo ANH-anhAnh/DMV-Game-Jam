@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://wui6m2ghdu1n"]
+
+[ext_resource type="Script" uid="uid://dpgv46ke8n54o" path="res://Scripts/end.gd" id="1_i5rmu"]
+[ext_resource type="PackedScene" uid="uid://bo0us3t228ym7" path="res://Scenes/textbox.tscn" id="2_5s6tj"]
+[ext_resource type="Texture2D" uid="uid://dwl2v5qdv56ka" path="res://Assets/rooms/outside.png" id="3_hqp8h"]
+
+[node name="room" type="Node2D" unique_id=1463458449]
+script = ExtResource("1_i5rmu")
+metadata/_edit_horizontal_guides_ = [-131.0]
+
+[node name="Textbox" parent="." unique_id=1069674369 instance=ExtResource("2_5s6tj")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1766124295]
+position = Vector2(320, 180)
+scale = Vector2(0.7146595, 0.6052435)
+texture = ExtResource("3_hqp8h")

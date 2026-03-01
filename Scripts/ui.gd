@@ -20,11 +20,15 @@ func _on_button_pressed() -> void:
 		var rect = sq.get_node("ColorRect")
 		rect.size = Vector2(640, 360)
 		rect.color = Color.BLACK
-		rect.z_index = 0
 		block = rect
+		$CanvasLayer/left.visible = false
+		$CanvasLayer/right.visible = false
+		
 		Map.disp()
 	else:
 		block.queue_free()
+		$CanvasLayer/left.visible = true
+		$CanvasLayer/right.visible = true
 		Map.hidemap()
 		
 ## updates the hunger bar

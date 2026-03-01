@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dhhaglfe2i1q5"]
+
+[ext_resource type="Script" uid="uid://d4n2fsbm3j5mj" path="res://Scripts/mf.gd" id="1_bfopt"]
+[ext_resource type="Texture2D" uid="uid://xf4ummjg05fr" path="res://Assets/portraits/mf (2).png" id="2_2als2"]
+[ext_resource type="PackedScene" uid="uid://bo0us3t228ym7" path="res://Scenes/textbox.tscn" id="3_n2yun"]
+
+[node name="mf" type="Node2D" unique_id=821114397]
+script = ExtResource("1_bfopt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=282321886]
+position = Vector2(-3, -2)
+scale = Vector2(0.070736624, 0.080438584)
+texture = ExtResource("2_2als2")
+
+[node name="Button" type="Button" parent="." unique_id=495931569]
+offset_left = -25.0
+offset_top = -74.99999
+offset_right = 10.0
+offset_bottom = -41.999992
+scale = Vector2(1.496987, 4.6241307)
+flat = true
+
+[node name="Textbox" parent="." unique_id=1069674369 instance=ExtResource("3_n2yun")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

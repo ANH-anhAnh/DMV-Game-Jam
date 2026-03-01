@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bpjujepwnnpgt"]
+
+[ext_resource type="Texture2D" uid="uid://dn4tl887v61mh" path="res://Assets/rooms/room 2.png" id="1_y4vqg"]
+[ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="3_wr3vo"]
+
+[node name="room" type="Node2D" unique_id=1463458449]
+metadata/_edit_horizontal_guides_ = [-131.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1766124295]
+position = Vector2(320, 180)
+texture = ExtResource("1_y4vqg")
+
+[node name="UI" parent="." unique_id=56917250 instance=ExtResource("3_wr3vo")]

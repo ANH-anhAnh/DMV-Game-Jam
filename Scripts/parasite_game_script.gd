@@ -97,6 +97,12 @@ func _on_checkout_area_body_entered(body: Node2D) -> void:
 		body.body_entered_checkout()
 		Map.collected_parasites += 1
 		$"../Label".text = str(Map.collected_parasites)
+		if(Map.collected_parasites == 20):
+			enough()
+			
+func enough():
+	Map.lethal = 1
+	$"../Textbox".queue_text("Bloody hell. This amount of parasites could take down even the strongest survivors", "default","default", 1)
 
 func _on_deletion_zone_body_entered(body: Node2D) -> void:
 	if body.has_method("parasite"):

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://kvddfxi5m2tr"]
+
+[ext_resource type="Script" uid="uid://d2thxmx73vxqm" path="res://Scripts/startroomexit.gd" id="1_hswjt"]
+[ext_resource type="PackedScene" uid="uid://bo0us3t228ym7" path="res://Scenes/textbox.tscn" id="2_yhdeq"]
+
+[node name="exit" type="Control" unique_id=617258739]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hswjt")
+
+[node name="Button" type="Button" parent="." unique_id=1108427158]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 100.0
+flat = true
+
+[node name="Textbox" parent="." unique_id=1069674369 instance=ExtResource("2_yhdeq")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

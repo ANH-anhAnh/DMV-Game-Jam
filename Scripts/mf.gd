@@ -8,6 +8,8 @@ func _ready() -> void:
 		
 
 func _on_button_pressed() -> void:
+	Map.mapaccess = 1
+	Map.mf = 1
 	var sq = SquareScene.instantiate()
 	add_child(sq)
 	var rect = sq.get_node("ColorRect")

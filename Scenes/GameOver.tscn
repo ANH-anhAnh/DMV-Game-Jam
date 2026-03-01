@@ -1,15 +1,15 @@
-[gd_scene format=3 uid="uid://cw358yex8iv7u"]
+[gd_scene format=3 uid="uid://duqnn53hblnsc"]
 
-[ext_resource type="Script" uid="uid://o007m03viuhu" path="res://Scripts/start_screen.gd" id="1_i8r30"]
-[ext_resource type="Texture2D" uid="uid://bnvle51lkbqw6" path="res://Assets/rooms/initiation room.png" id="2_ainjc"]
+[ext_resource type="Script" uid="uid://o007m03viuhu" path="res://Scripts/start_screen.gd" id="1_m5628"]
+[ext_resource type="Texture2D" uid="uid://bnvle51lkbqw6" path="res://Assets/rooms/initiation room.png" id="2_k52d1"]
 
 [node name="Start screen" type="Node2D" unique_id=1500080815]
-script = ExtResource("1_i8r30")
+script = ExtResource("1_m5628")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=759080539]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=696994993]
 position = Vector2(567, 327)
 scale = Vector2(1.3480589, 1.333715)
-texture = ExtResource("2_ainjc")
+texture = ExtResource("2_k52d1")
 
 [node name="button manager" type="Control" parent="." unique_id=1904651555]
 layout_mode = 3
@@ -43,7 +43,7 @@ offset_left = 516.0
 offset_top = 150.0
 offset_right = 591.0
 offset_bottom = 173.0
-text = "Sewer Sect"
+text = "GAME_OVER"
 
 [connection signal="pressed" from="button manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="button manager/Quit" to="." method="_on_quit_pressed"]

@@ -12,6 +12,7 @@ func _ready() -> void:
 
 	$CanvasLayer/ColorRect.size.y = newheight
 	$CanvasLayer/ColorRect.position.y = $CanvasLayer/ColorRect.position.y - heightdiff
+	
 ##map button
 func _on_button_pressed() -> void:
 	if(!Map.shown):
@@ -30,6 +31,10 @@ func _on_button_pressed() -> void:
 		$CanvasLayer/left.visible = true
 		$CanvasLayer/right.visible = true
 		Map.hidemap()
+		
+## parasite scanner button
+func _on_button_2_pressed() -> void:
+	pass # Replace with function body.
 		
 ## updates the hunger bar
 func update():

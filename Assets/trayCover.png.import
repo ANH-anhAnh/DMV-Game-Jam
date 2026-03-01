@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca0iq4q8og8ec"
-path="res://.godot/imported/parasite1.png-0553f18206709ec4eeddc0702e6ec223.ctex"
+uid="uid://1wc1otdwjkm8"
+path="res://.godot/imported/trayCover.png-d6cab632012718978d6a2127cb1f39c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/parasite1.png"
-dest_files=["res://.godot/imported/parasite1.png-0553f18206709ec4eeddc0702e6ec223.ctex"]
+source_file="res://Assets/trayCover.png"
+dest_files=["res://.godot/imported/trayCover.png-d6cab632012718978d6a2127cb1f39c5.ctex"]
 
 [params]
 

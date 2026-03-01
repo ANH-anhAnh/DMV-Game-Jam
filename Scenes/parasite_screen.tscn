@@ -1,3 +1,68 @@
 [gd_scene format=3 uid="uid://bl2022y7dwuir"]
 
-[node name="parasite screen" type="Node2D" unique_id=1627121692]
+[ext_resource type="Texture2D" uid="uid://3md70ndamd14" path="res://Assets/tray.png" id="1_llfna"]
+[ext_resource type="Script" uid="uid://dc8oi8u75c1x2" path="res://Scripts/parasite_game_script.gd" id="1_mukpw"]
+[ext_resource type="Texture2D" uid="uid://bki7rqachde" path="res://Assets/stomach.png" id="2_vpv5x"]
+[ext_resource type="PackedScene" uid="uid://cfx5mcnqe47fx" path="res://Scenes/parasite.tscn" id="3_vpv5x"]
+[ext_resource type="Texture2D" uid="uid://1wc1otdwjkm8" path="res://Assets/trayCover.png" id="4_p605k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mukpw"]
+size = Vector2(212, 23.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sip22"]
+size = Vector2(1124, 20)
+
+[node name="parasite screen" type="CanvasLayer" unique_id=1937903932]
+
+[node name="ParasiteGameScript" type="Node2D" parent="." unique_id=1391638075]
+script = ExtResource("1_mukpw")
+
+[node name="Sprites" type="Node2D" parent="." unique_id=1526784347]
+
+[node name="Tray" type="Sprite2D" parent="Sprites" unique_id=1138001849]
+position = Vector2(320, 180)
+texture = ExtResource("1_llfna")
+
+[node name="Stomach" type="Sprite2D" parent="Sprites" unique_id=1901104931]
+position = Vector2(320, 180)
+texture = ExtResource("2_vpv5x")
+
+[node name="TrayCover" type="Sprite2D" parent="Sprites" unique_id=1285634394]
+z_index = 1
+texture = ExtResource("4_p605k")
+centered = false
+
+[node name="Collisions" type="Node2D" parent="." unique_id=559516756]
+
+[node name="CheckoutArea" type="Area2D" parent="Collisions" unique_id=206312118]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/CheckoutArea" unique_id=798887299]
+polygon = PackedVector2Array(565, 186, 387, 186, 372, 266, 382, 299, 567, 299, 578, 266)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collisions" unique_id=841297534]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D" unique_id=1599478661]
+position = Vector2(476, 286)
+shape = SubResource("RectangleShape2D_mukpw")
+
+[node name="StomachArea" type="Area2D" parent="Collisions" unique_id=1993151381]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StomachArea" unique_id=1238858829]
+position = Vector2(216, 126)
+polygon = PackedVector2Array(-20, -14, -3, -12, 48, 8, 73, 46, 64, 98, 17, 134, -42, 145, -78, 116, -115, 107, -104, 70, -75, 55, 0, 32)
+
+[node name="DeletionZone" type="Area2D" parent="Collisions" unique_id=1902760289]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/DeletionZone" unique_id=778740686]
+position = Vector2(320, 500)
+shape = SubResource("RectangleShape2D_sip22")
+
+[node name="Parasites" type="Node2D" parent="." unique_id=885129961]
+
+[node name="Parasite" parent="Parasites" unique_id=469790171 instance=ExtResource("3_vpv5x")]
+position = Vector2(199, 201)
+
+[connection signal="body_entered" from="Collisions/CheckoutArea" to="ParasiteGameScript" method="_on_checkout_area_body_entered"]
+[connection signal="body_entered" from="Collisions/StomachArea" to="ParasiteGameScript" method="_on_stomach_area_body_entered"]
+[connection signal="body_exited" from="Collisions/StomachArea" to="ParasiteGameScript" method="_on_stomach_area_body_exited"]
+[connection signal="body_entered" from="Collisions/DeletionZone" to="ParasiteGameScript" method="_on_deletion_zone_body_entered"]

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bo0us3t228ym7" path="res://Scenes/textbox.tscn" id="4_byi40"]
 [ext_resource type="Texture2D" uid="uid://dm3v0vdubgqg" path="res://Assets/deadpastor.png" id="5_xgj3x"]
 [ext_resource type="PackedScene" uid="uid://k37hlke3k7x3" path="res://Scenes/Objects/up.tscn" id="6_ljeox"]
+[ext_resource type="AudioStream" uid="uid://bsni4fboetvq4" path="res://Assets/Audio/sfx/splat_quick.wav" id="7_gaaw8"]
 
 [node name="room" type="Node2D" unique_id=1463458449]
 script = ExtResource("1_nvbgs")
@@ -28,3 +29,6 @@ offset_left = 236.0
 offset_top = 109.0
 offset_right = 236.0
 offset_bottom = 109.0
+
+[node name="splat" type="AudioStreamPlayer2D" parent="." unique_id=1981172841]
+stream = ExtResource("7_gaaw8")

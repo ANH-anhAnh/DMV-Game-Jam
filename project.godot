@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DMV GJ Parasite"
-run/main_scene="uid://dlnsevwebpb2"
+run/main_scene="uid://cw358yex8iv7u"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Assets/Audio/icon.svg"
 

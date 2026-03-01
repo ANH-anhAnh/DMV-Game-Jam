@@ -71,8 +71,10 @@ func _on_button_2_pressed() -> void:
 		
 ## updates the hunger bar
 func update():
-	Map.hunger = Map.hunger - (Map.stomach_parasites * 0.25)
+	Map.hunger = Map.hunger - (Map.stomach_parasites * 0.75)
 	if(Map.hunger <= 0):
+		Transition.transition()
+		await Transition.on_transition_finished
 		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 	var newheight = (260.0 / 100.0) * Map.hunger
 	var heightdiff = newheight - $CanvasLayer/ColorRect.size.y

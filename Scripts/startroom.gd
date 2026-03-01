@@ -8,6 +8,8 @@ func _ready() -> void:
 		Map.key = 1
 		$Textbox.queue_text("Ah. I suppose you’ve had a change of heart? Realized there’s nothing beyond those gates? We survivors are safe under here. Drought follows the burning sun. Nothing that touches it survives.","default","pastor",1)
 		$Textbox.queue_text("Burning sun? You mean to tell me there’s something up there? BEYOND THOSE BLOODY GATES YOU LOCKED US BEHIND?","default","pastor",0)
+		await wait_for_next_event(.5)
+		$splat.play()
 		$Textbox.queue_text("*You lunge forward with all your might. Digging the syringe into the pastor’s skin, you press your thumb against the plunger.*","default","pastor",0)
 		$Textbox.queue_text("GAAAH. WHAT HAVE YOU DONE?","default","pastor",1)
 		$Textbox.queue_text("*His hands are wildly flailing around. He stumbles towards you sporadically.","default","pastor",0)
@@ -28,6 +30,8 @@ func _ready() -> void:
 		$Textbox.queue_text("A thick, warm liquid trickles down, filling your vision. Why is it so cold? Why? Why won’t anyone help me? Why won’t anyone? Save me? Believe me?","default","pastor",0)
 		$Textbox.queue_text("“Mom?” *You manage to croak out, before you slump to the floor","default","pastor",0)
 		await wait_for_next_event(.2)
+		Transition.transition()
+		await Transition.on_transition_finished
 		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 		
 		

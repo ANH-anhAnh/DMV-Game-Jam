@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://xhalen1r824" path="res://Assets/portraits/pastorlow.png" id="3_yyjux"]
 [ext_resource type="Texture2D" uid="uid://cltqs330oip4q" path="res://Assets/perona.png" id="4_crx6k"]
 [ext_resource type="Texture2D" uid="uid://de1f7rb47vr0e" path="res://Assets/portraits/beauty.png" id="4_va30d"]
+[ext_resource type="AudioStream" uid="uid://2jlpup80s1qc" path="res://Assets/Audio/sfx/cough_short.wav" id="7_o3c07"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axoti"]
 bg_color = Color(0, 0, 0, 1)
@@ -103,6 +104,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(320, 180)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cough:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_o3c07"]
 resource_name = "spasm"
@@ -118,6 +131,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3.138338),
 "update": 0,
 "values": [Vector2(323, 180), Vector2(317, 180), Vector2(323, 180), Vector2(317, 180), Vector2(323, 180), Vector2(317, 180), Vector2(323, 180), Vector2(317, 180), Vector2(323, 180), Vector2(317, 180), Vector2(323, 180), Vector2(317, 180), Vector2(323, 180), Vector2(317, 180), Vector2(323, 180), Vector2(317, 180), Vector2(323, 180), Vector2(317, 180), Vector2(317, 180), Vector2(317, 500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cough:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.4666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3c3k1"]
@@ -199,3 +224,6 @@ animation = &"perona"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2111590197]
 libraries/ = SubResource("AnimationLibrary_3c3k1")
 autoplay = &"RESET"
+
+[node name="cough" type="AudioStreamPlayer2D" parent="." unique_id=1484354004]
+stream = ExtResource("7_o3c07")

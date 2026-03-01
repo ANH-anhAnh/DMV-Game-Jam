@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bl2022y7dwuir"]
 
+[ext_resource type="Script" uid="uid://dbb5iyxhpj1ss" path="res://Scripts/timer.gd" id="1_a3xw2"]
 [ext_resource type="Texture2D" uid="uid://3md70ndamd14" path="res://Assets/tray.png" id="1_llfna"]
 [ext_resource type="Script" uid="uid://dc8oi8u75c1x2" path="res://Scripts/parasite_game_script.gd" id="1_mukpw"]
 [ext_resource type="Texture2D" uid="uid://bki7rqachde" path="res://Assets/stomach.png" id="2_vpv5x"]
@@ -11,6 +12,7 @@
 size = Vector2(1124, 20)
 
 [node name="parasite screen" type="CanvasLayer" unique_id=1937903932]
+script = ExtResource("1_a3xw2")
 
 [node name="ParasiteGameScript" type="Node2D" parent="." unique_id=1391638075]
 script = ExtResource("1_mukpw")
@@ -69,6 +71,7 @@ offset_bottom = 349.0
 
 [node name="squish" type="AudioStreamPlayer2D" parent="." unique_id=1936671623]
 
+[connection signal="spawn" from="." to="ParasiteGameScript" method="_on_parasite_screen_spawn"]
 [connection signal="body_entered" from="Collisions/CheckoutArea" to="ParasiteGameScript" method="_on_checkout_area_body_entered"]
 [connection signal="body_entered" from="Collisions/StomachArea" to="ParasiteGameScript" method="_on_stomach_area_body_entered"]
 [connection signal="body_exited" from="Collisions/StomachArea" to="ParasiteGameScript" method="_on_stomach_area_body_exited"]

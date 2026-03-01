@@ -22,7 +22,6 @@ func _process(_delta):
 			Map.pp_stomach_parasites = Map.p_stomach_parasites
 			Map.p_stomach_parasites = Map.stomach_parasites
 			spawn_parasite()
-		Map.stomach_parasites = Map.pp_stomach_parasites + Map.p_stomach_parasites
 		spawning = 0
 	
 # for spawning parasites inside the stomach area ---------------------------------------------------

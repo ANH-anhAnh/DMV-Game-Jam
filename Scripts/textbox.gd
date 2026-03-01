@@ -48,19 +48,18 @@ func hide_box():
 func queue_text(next_text,left,right,who):
 	text_queue.push_back([next_text,left,right,who])
 
-
 # makes box visible
 func show_box():
 	start.text = "*"
 	textbox_container.show()
-	
+var pose
 # changes the textbox text and manages sprites per queue entry
 func display_text():
 	#two tweens, one for sprites one for text box
 	tween = get_tree().create_tween()
 	var anim = get_tree().create_tween()
 	var next_text = text_queue.pop_front()
-
+	
 	#index 0 contains text to display
 	label.text = next_text[0]
 	label.visible_characters = -1
@@ -69,6 +68,7 @@ func display_text():
 	show_box()
 	#index 1 and 2 contain left and right sprite names respectivelt
 	$right.play(next_text[2])
+	pose = next_text[2]
 	$left.play(next_text[1])
 	# tweens into foreground and background depending on who is speaking index 3 contains who
 	if(next_text[3] and front != next_text[3]):
@@ -101,6 +101,8 @@ func _process(delta: float) -> void:
 				
 			#contains functionality to skip tweening and show full text.
 		State.READING:
+			if pose == "pastor_agony":
+				spasm()
 			if Input.is_action_just_pressed("interact"):
 				tween.kill()
 				label.visible_characters = -1
@@ -125,4 +127,6 @@ func change_state(next_state):
 			pass
 		State.FINISHED:
 			pass
-			
+
+func spasm():
+	$AnimationPlayer.play("spasm")

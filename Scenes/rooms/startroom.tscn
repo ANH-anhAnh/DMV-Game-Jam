@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="2_nvbgs"]
 [ext_resource type="PackedScene" uid="uid://bo0us3t228ym7" path="res://Scenes/textbox.tscn" id="4_byi40"]
 [ext_resource type="Texture2D" uid="uid://dm3v0vdubgqg" path="res://Assets/deadpastor.png" id="5_xgj3x"]
+[ext_resource type="PackedScene" uid="uid://k37hlke3k7x3" path="res://Scenes/Objects/up.tscn" id="6_ljeox"]
 
 [node name="room" type="Node2D" unique_id=1463458449]
 script = ExtResource("1_nvbgs")
@@ -21,3 +22,9 @@ texture = ExtResource("1_v7q8a")
 [node name="death" type="Sprite2D" parent="." unique_id=1381927935]
 position = Vector2(303, 185)
 texture = ExtResource("5_xgj3x")
+
+[node name="up" parent="." unique_id=462097833 instance=ExtResource("6_ljeox")]
+offset_left = 236.0
+offset_top = 109.0
+offset_right = 236.0
+offset_bottom = 109.0

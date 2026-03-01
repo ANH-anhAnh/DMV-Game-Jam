@@ -11,7 +11,7 @@ func _ready() -> void:
 		$Textbox.queue_text("*You lunge forward with all your might. Digging the syringe into the pastor’s skin, you press your thumb against the plunger.*","default","pastor",0)
 		$Textbox.queue_text("GAAAH. WHAT HAVE YOU DONE?","default","pastor",1)
 		$Textbox.queue_text("*His hands are wildly flailing around. He stumbles towards you sporadically.","default","pastor",0)
-		$Textbox.queue_text("H-Huuurrkk","default","pastor",1)
+		$Textbox.queue_text("H-Huuurrkk","default","pastor_agony",1)
 		$Textbox.queue_text("*The pastor slumps to the floor.*","default","default",0)
 		$Textbox.queue_text("*You rummage through his pockets*","default","default",0)
 		$Textbox.queue_text("I’ll be taking that. Thank yeww~ :3","default","default",0)

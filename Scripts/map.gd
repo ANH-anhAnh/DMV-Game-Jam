@@ -8,9 +8,9 @@ var pp_stomach_parasites = 0
 # number of parasites collected
 var collected_parasites : int
 var gate = 0
-var lethal = 0
-var syringe = 0
-var key = 1
+var lethal = 1
+var syringe = 1
+var key = 0
 ## level layout, contains all room scenes 
 var layout1 = [
 	["res://Assets/rooms/outside.png","res://Scenes/rooms/sewergate.tscn",0,0,0],

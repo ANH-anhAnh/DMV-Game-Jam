@@ -6,9 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cfx5mcnqe47fx" path="res://Scenes/parasite.tscn" id="3_vpv5x"]
 [ext_resource type="Texture2D" uid="uid://1wc1otdwjkm8" path="res://Assets/trayCover.png" id="4_p605k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mukpw"]
-size = Vector2(212, 23.5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sip22"]
 size = Vector2(1124, 20)
 
@@ -41,15 +38,14 @@ polygon = PackedVector2Array(565, 186, 387, 186, 372, 266, 382, 299, 567, 299, 5
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Collisions" unique_id=841297534]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D" unique_id=1599478661]
-position = Vector2(476, 286)
-shape = SubResource("RectangleShape2D_mukpw")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D" unique_id=963010748]
+polygon = PackedVector2Array(367, 276, 583, 276, 568, 185, 573, 154, 596, 270, 577, 310, 372, 310, 350, 265, 378, 153, 384, 188)
 
 [node name="StomachArea" type="Area2D" parent="Collisions" unique_id=1993151381]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StomachArea" unique_id=1238858829]
 position = Vector2(216, 126)
-polygon = PackedVector2Array(-20, -14, -3, -12, 48, 8, 73, 46, 64, 98, 17, 134, -42, 145, -78, 116, -115, 107, -104, 70, -75, 55, 0, 32)
+polygon = PackedVector2Array(48, 8, 73, 46, 58, 107, -33, 152, -112, 101, -104, 70, -4, 36, -9, -14)
 
 [node name="DeletionZone" type="Area2D" parent="Collisions" unique_id=1902760289]
 

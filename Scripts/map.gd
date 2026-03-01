@@ -2,7 +2,9 @@ extends Node2D
 
 # number of parasites currently in stomach
 # -> controls the decay rate of hunger
-var num_parasites : int
+var stomach_parasites : int
+# number of parasites collected
+var collected_parasites : int
 
 ## level layout, contains all room scenes 
 var layout1 = [

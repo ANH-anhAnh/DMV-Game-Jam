@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var textbox = $Textbox
+var left := preload("res://Scenes/Objects/left.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,3 +13,9 @@ func _ready() -> void:
 		textbox.queue_text("There’s a contraption. If I could break this. If I could open this somehow…", "default", "default", 1)
 		textbox.queue_text("Whatever it is, that bloodydamn psycho holds the answers. I’ll beat him to a bloody pulp ‘till he gives it up.", "default", "default", 1)
 		Map.gate = 1
+	if Map.key == 1:
+		var lt = left.instantiate()
+		add_child(lt)
+		var button = lt.get_node("Button")
+		button.size = Vector2(640, 360)
+		

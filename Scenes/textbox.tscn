@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bo0us3t228ym7"]
 
 [ext_resource type="Script" uid="uid://dho8srsnbv785" path="res://Scripts/textbox.gd" id="1_psw4q"]
+[ext_resource type="Texture2D" uid="uid://bhkkdk3gx2sln" path="res://Assets/mf.png" id="2_g1jww"]
 [ext_resource type="Texture2D" uid="uid://dlljedh0hu60c" path="res://Assets/portraits/pastor.png" id="2_i40gg"]
 [ext_resource type="Texture2D" uid="uid://xhalen1r824" path="res://Assets/portraits/pastorlow.png" id="3_yyjux"]
+[ext_resource type="Texture2D" uid="uid://cltqs330oip4q" path="res://Assets/perona.png" id="4_crx6k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axoti"]
 bg_color = Color(0, 0, 0, 1)
@@ -12,6 +14,10 @@ border_width_right = 20
 border_width_bottom = 20
 border_blend = true
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_va30d"]
+atlas = ExtResource("2_g1jww")
+region = Rect2(0, 0, 640, 360)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ny4l3"]
 animations = [{
 "frames": [{
@@ -20,6 +26,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va30d")
+}],
+"loop": true,
+"name": &"mf",
 "speed": 5.0
 }, {
 "frames": [{
@@ -39,8 +53,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x01y5"]
-region = Rect2(0, 320, 48, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1jww"]
+atlas = ExtResource("4_crx6k")
+region = Rect2(0, 0, 640, 360)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7j5mu"]
 animations = [{
@@ -54,15 +69,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x01y5")
+"texture": SubResource("AtlasTexture_g1jww")
 }],
 "loop": true,
-"name": &"flynn",
+"name": &"perona",
 "speed": 5.0
 }]
 
 [node name="Textbox" type="CanvasLayer" unique_id=1069674369]
 process_mode = 3
+visible = false
 script = ExtResource("1_psw4q")
 
 [node name="TextboxContainer" type="MarginContainer" parent="." unique_id=1253367587]
@@ -122,10 +138,11 @@ text = "v
 z_index = -1
 position = Vector2(320, 180)
 sprite_frames = SubResource("SpriteFrames_ny4l3")
-animation = &"pastor"
+animation = &"mf"
 
 [node name="left" type="AnimatedSprite2D" parent="." unique_id=924828484]
 z_index = -1
-position = Vector2(60, 163)
-scale = Vector2(6.85417, 6.5)
+position = Vector2(417, 113)
+scale = Vector2(1, 0.948)
 sprite_frames = SubResource("SpriteFrames_7j5mu")
+animation = &"perona"

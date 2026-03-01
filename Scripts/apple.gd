@@ -10,4 +10,3 @@ func _on_button_pressed() -> void:
 	$".".visible = false
 	Map.food[Map.selfpos[1]][Map.selfpos[0]] = 0
 	Map.hunger = 100
-	Map.stomach_parasites += 5

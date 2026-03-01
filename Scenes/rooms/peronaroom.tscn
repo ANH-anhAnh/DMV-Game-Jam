@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://balh6htyhoxbk"]
+
+[ext_resource type="Texture2D" uid="uid://dgust64skxgj8" path="res://Assets/rooms/sewerroom.png" id="1_eaehj"]
+[ext_resource type="PackedScene" uid="uid://ct1ss8ykllfx5" path="res://Scenes/Objects/right.tscn" id="2_rqxo2"]
+[ext_resource type="PackedScene" uid="uid://c20gwb8xgc4pi" path="res://Scenes/Objects/hamburger.tscn" id="3_38kry"]
+[ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="4_kvy7l"]
+[ext_resource type="PackedScene" uid="uid://diwoi1y546pv6" path="res://Scenes/Objects/Eggyolkperona3000.tscn" id="5_rqxo2"]
+
+[node name="room" type="Node2D" unique_id=1463458449]
+metadata/_edit_horizontal_guides_ = [-131.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1766124295]
+position = Vector2(320, 180)
+texture = ExtResource("1_eaehj")
+
+[node name="right" parent="." unique_id=462097833 instance=ExtResource("2_rqxo2")]
+offset_left = 60.000023
+offset_top = 273.0
+offset_right = 60.000023
+offset_bottom = 273.0
+scale = Vector2(2.52, 0.48000002)
+
+[node name="hamburger" parent="." unique_id=821114397 instance=ExtResource("3_38kry")]
+position = Vector2(559, 299)
+
+[node name="UI" parent="." unique_id=56917250 instance=ExtResource("4_kvy7l")]
+
+[node name="perona" parent="." unique_id=1108538128 instance=ExtResource("5_rqxo2")]
+position = Vector2(485, 242)

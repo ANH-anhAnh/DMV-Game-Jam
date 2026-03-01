@@ -1,16 +1,15 @@
 [gd_scene format=3 uid="uid://dhhaglfe2i1q5"]
 
 [ext_resource type="Script" uid="uid://d4n2fsbm3j5mj" path="res://Scripts/mf.gd" id="1_bfopt"]
-[ext_resource type="Texture2D" uid="uid://xf4ummjg05fr" path="res://Assets/portraits/mf (2).png" id="2_2als2"]
+[ext_resource type="Texture2D" uid="uid://cqjuybsw0a8ij" path="res://Assets/mffull.png" id="2_bfopt"]
 [ext_resource type="PackedScene" uid="uid://bo0us3t228ym7" path="res://Scenes/textbox.tscn" id="3_n2yun"]
 
 [node name="mf" type="Node2D" unique_id=821114397]
 script = ExtResource("1_bfopt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=282321886]
-position = Vector2(-3, -2)
-scale = Vector2(0.070736624, 0.080438584)
-texture = ExtResource("2_2als2")
+position = Vector2(-196, -24)
+texture = ExtResource("2_bfopt")
 
 [node name="Button" type="Button" parent="." unique_id=495931569]
 offset_left = -25.0

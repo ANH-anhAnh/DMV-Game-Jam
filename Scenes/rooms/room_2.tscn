@@ -29,7 +29,7 @@ offset_bottom = 95.0
 scale = Vector2(0.5477699, 0.6502427)
 
 [node name="mf" parent="." unique_id=821114397 instance=ExtResource("6_ja46e")]
-position = Vector2(576, 207)
+position = Vector2(534, 225)
 
 [node name="exit" parent="." unique_id=617258739 instance=ExtResource("5_k1bf4")]
 offset_left = 94.0

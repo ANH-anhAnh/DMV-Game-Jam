@@ -7,3 +7,4 @@ func _on_button_pressed() -> void:
 	else:
 		var change = [0,1]
 		Map.sceneupdate(change)
+		

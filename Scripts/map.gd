@@ -4,8 +4,16 @@ var layout1 = [
 	[0,1,0,0,0],
 	[1,1,1,1,0],
 	[1,0,0,1,0],
-	[1,"res://Scenes/rooms/room_2.tscn",1,1,0],
+	["res://Scenes/rooms/sewerroom.tscn","res://Scenes/rooms/room_2.tscn",1,1,0],
 	[0,"res://Scenes/rooms/room_1.tscn",0,0,0]
+]
+
+var food = [
+	[0,0,0,0,0],
+	[0,0,0,0,0],
+	[0,0,0,0,0],
+	[1,0,0,0,0],
+	[0,0,0,0,0]
 ]
 ##array containing explored coordinates
 var explored = []

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://nwx3ut6b2fw" path="res://Scripts/ui.gd" id="1_m1v6r"]
 [ext_resource type="Texture2D" uid="uid://c1hbxotga4er" path="res://Assets/stomachicon.png" id="2_qdvrb"]
+[ext_resource type="Texture2D" uid="uid://cp2nasgydwmb8" path="res://Assets/hands/left.png" id="3_2246s"]
+[ext_resource type="Texture2D" uid="uid://dcfoagh8kl4wo" path="res://Assets/hands/right2.png" id="4_q7pk6"]
 
 [node name="UI" type="Control" unique_id=56917250]
 layout_mode = 3
@@ -15,6 +17,7 @@ script = ExtResource("1_m1v6r")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1020113644]
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=1625085568]
+z_index = 2
 offset_left = 580.0
 offset_top = 8.0
 offset_right = 630.0
@@ -31,5 +34,13 @@ color = Color(0.5697106, 0.11288785, 0.32239792, 1)
 position = Vector2(81, 298)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_qdvrb")
+
+[node name="left" type="Sprite2D" parent="CanvasLayer" unique_id=2067332636]
+position = Vector2(290, 181)
+texture = ExtResource("3_2246s")
+
+[node name="right" type="Sprite2D" parent="CanvasLayer" unique_id=409852157]
+position = Vector2(290, 181)
+texture = ExtResource("4_q7pk6")
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

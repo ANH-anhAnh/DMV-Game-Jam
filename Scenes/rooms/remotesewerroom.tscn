@@ -12,8 +12,6 @@ metadata/_edit_horizontal_guides_ = [-131.0]
 position = Vector2(320, 180)
 texture = ExtResource("1_udmiu")
 
-[node name="UI" parent="." unique_id=56917250 instance=ExtResource("4_2jog6")]
-
 [node name="left" parent="." unique_id=462097833 instance=ExtResource("3_3ijrd")]
 offset_left = 87.99999
 offset_top = 255.00003
@@ -24,3 +22,5 @@ scale = Vector2(2.2165384, 0.56466657)
 [node name="apple" parent="." unique_id=821114397 instance=ExtResource("4_udmiu")]
 position = Vector2(496, 219)
 scale = Vector2(0.48669267, 0.5398776)
+
+[node name="UI" parent="." unique_id=56917250 instance=ExtResource("4_2jog6")]

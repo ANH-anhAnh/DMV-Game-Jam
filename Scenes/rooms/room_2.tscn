@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dn4tl887v61mh" path="res://Assets/rooms/room 2.png" id="1_rv0jd"]
 [ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="3_lqljp"]
 [ext_resource type="PackedScene" uid="uid://dhmh50s2h2tdl" path="res://Scenes/Objects/left.tscn" id="5_ja46e"]
+[ext_resource type="PackedScene" uid="uid://kvddfxi5m2tr" path="res://Scenes/Objects/startroomexit.tscn" id="5_k1bf4"]
 [ext_resource type="PackedScene" uid="uid://dhhaglfe2i1q5" path="res://Scenes/Objects/mf.tscn" id="6_ja46e"]
 [ext_resource type="PackedScene" uid="uid://ct1ss8ykllfx5" path="res://Scenes/Objects/right.tscn" id="6_k1bf4"]
 
@@ -29,5 +30,11 @@ scale = Vector2(0.5477699, 0.6502427)
 
 [node name="mf" parent="." unique_id=821114397 instance=ExtResource("6_ja46e")]
 position = Vector2(576, 207)
+
+[node name="exit" parent="." unique_id=617258739 instance=ExtResource("5_k1bf4")]
+offset_left = 94.0
+offset_top = 278.0
+offset_right = 94.0
+offset_bottom = 278.0
 
 [node name="UI" parent="." unique_id=56917250 instance=ExtResource("3_lqljp")]

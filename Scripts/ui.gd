@@ -68,10 +68,20 @@ func _on_button_2_pressed() -> void:
 		
 ## updates the hunger bar
 func update():
-	var newheight = (260.0 / 100.0) * hunger
+	Map.hunger = Map.hunger - (Map.stomach_parasites)
+	var newheight = (260.0 / 100.0) * Map.hunger
 	var heightdiff = newheight - $CanvasLayer/ColorRect.size.y
 
 	var tween = create_tween()
 
 	tween.tween_property($CanvasLayer/ColorRect, "size:y", newheight, 0.5)
 	tween.parallel().tween_property($CanvasLayer/ColorRect,"position:y",$CanvasLayer/ColorRect.position.y - heightdiff,0.5)
+	await get_tree().create_timer(5, false).timeout
+	hungry = 0
+
+var hungry = 0
+func _process(delta: float) -> void:
+	if(!hungry):
+		hungry = 1
+		update()
+	

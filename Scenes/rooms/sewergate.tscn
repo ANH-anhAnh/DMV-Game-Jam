@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://y5h0jtof0dmh"]
 
 [ext_resource type="Texture2D" uid="uid://drdf7v1qc4cmj" path="res://Assets/rooms/SewerGate.png" id="1_hqjgt"]
+[ext_resource type="Script" uid="uid://bijdn25dy4tis" path="res://Scripts/sewergate.gd" id="1_ibvaf"]
 [ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="2_hqjgt"]
 [ext_resource type="PackedScene" uid="uid://canmda7hvygfw" path="res://Scenes/Objects/exit.tscn" id="3_ibvaf"]
+[ext_resource type="PackedScene" uid="uid://bo0us3t228ym7" path="res://Scenes/textbox.tscn" id="5_i7iop"]
 
 [node name="room" type="Node2D" unique_id=1463458449]
+script = ExtResource("1_ibvaf")
 metadata/_edit_horizontal_guides_ = [-131.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1766124295]
@@ -18,3 +21,5 @@ offset_right = 104.0
 offset_bottom = 291.0
 
 [node name="UI" parent="." unique_id=56917250 instance=ExtResource("2_hqjgt")]
+
+[node name="Textbox" parent="." unique_id=1069674369 instance=ExtResource("5_i7iop")]

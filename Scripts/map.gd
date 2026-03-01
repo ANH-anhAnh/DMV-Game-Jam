@@ -3,16 +3,20 @@ extends Node2D
 # number of parasites currently in stomach
 # -> controls the decay rate of hunger
 var stomach_parasites : int
+var p_stomach_parasites = 1
+var pp_stomach_parasites = 0 
 # number of parasites collected
 var collected_parasites : int
-
+var gate = 0
+var lethal = 0
+var syringe = 0
 ## level layout, contains all room scenes 
 var layout1 = [
 	[0,"res://Scenes/rooms/sewergate.tscn",0,0,0],
 	["res://Scenes/rooms/sewerroom.tscn","res://Scenes/rooms/rightleftup.tscn","res://Scenes/rooms/rightleft.tscn","res://Scenes/rooms/leftturn.tscn",0],
 	[0,0,0,"res://Scenes/rooms/upright.tscn","res://Scenes/rooms/remotesewerroom.tscn"],
 	["res://Scenes/rooms/sewerroom.tscn","res://Scenes/rooms/room_2.tscn","res://Scenes/rooms/longchasmpipe.tscn","res://Scenes/rooms/bendrighttoup.tscn",0],
-	[0,"res://Scenes/rooms/room_1.tscn",0,0,0]
+	[0,"res://Scenes/rooms/startroom.tscn",0,0,0]
 ]
 
 var food = [
@@ -24,11 +28,11 @@ var food = [
 ]
 ##array containing explored coordinates
 var explored = []
-var hunger = 100
+var hunger = 100.0
 var playercircle
 var currentlayout
 var mf = 0
-var selfpos = [1,4]
+var selfpos = [1,3]
 var shown = 0
 var parasiteaccess = 0
 var mapaccess = 0

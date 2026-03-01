@@ -6,8 +6,11 @@ extends Node2D
 # load parasite scene
 @onready var parasite_scene := preload("res://Scenes/parasite.tscn") 
 var spawning = 0
-var p_stomach_parasites = 1
-var pp_stomach_parasites = 0 
+
+func _ready() -> void:
+	$"../Label".text = str(Map.collected_parasites)
+	for i in range(Map.stomach_parasites + 1):
+		spawn_parasite()
 
 func _process(_delta):		
 	# spawn parasites every 5-10 seconds based on fibonnaci sequence
@@ -15,10 +18,11 @@ func _process(_delta):
 		spawning = 1
 		var fiveToTen = randi_range(10, 20)
 		await get_tree().create_timer(fiveToTen).timeout
-		for i in range(pp_stomach_parasites + pp_stomach_parasites + 1):
-			pp_stomach_parasites = p_stomach_parasites
-			p_stomach_parasites = Map.stomach_parasites
+		for i in range(Map.pp_stomach_parasites + Map.pp_stomach_parasites + 1):
+			Map.pp_stomach_parasites = Map.p_stomach_parasites
+			Map.p_stomach_parasites = Map.stomach_parasites
 			spawn_parasite()
+		Map.stomach_parasites = Map.pp_stomach_parasites + Map.p_stomach_parasites
 		spawning = 0
 	
 # for spawning parasites inside the stomach area ---------------------------------------------------
@@ -92,6 +96,13 @@ func _on_checkout_area_body_entered(body: Node2D) -> void:
 	if body.has_method("parasite"):
 		body.body_entered_checkout()
 		Map.collected_parasites += 1
+		$"../Label".text = str(Map.collected_parasites)
+		if(Map.collected_parasites == 20):
+			enough()
+			
+func enough():
+	Map.lethal = 1
+	$"../Textbox".queue_text("Bloody hell. This amount of parasites could take down even the strongest survivors", "default","default", 1)
 
 func _on_deletion_zone_body_entered(body: Node2D) -> void:
 	if body.has_method("parasite"):

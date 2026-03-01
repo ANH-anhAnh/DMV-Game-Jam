@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c58trg3c6fcj"]
 
 [ext_resource type="Texture2D" uid="uid://dn4tl887v61mh" path="res://Assets/rooms/room 2.png" id="1_rv0jd"]
-[ext_resource type="PackedScene" uid="uid://canmda7hvygfw" path="res://Scenes/Objects/exit.tscn" id="2_bebw6"]
 [ext_resource type="PackedScene" uid="uid://dswwu8kyafma" path="res://Scenes/ui.tscn" id="3_lqljp"]
 [ext_resource type="PackedScene" uid="uid://dhmh50s2h2tdl" path="res://Scenes/Objects/left.tscn" id="5_ja46e"]
 [ext_resource type="PackedScene" uid="uid://dhhaglfe2i1q5" path="res://Scenes/Objects/mf.tscn" id="6_ja46e"]
@@ -13,12 +12,6 @@ metadata/_edit_horizontal_guides_ = [-131.0]
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1766124295]
 position = Vector2(320, 180)
 texture = ExtResource("1_rv0jd")
-
-[node name="exit" parent="." unique_id=617258739 instance=ExtResource("2_bebw6")]
-offset_left = 126.0
-offset_top = 303.0
-offset_right = 126.0
-offset_bottom = 303.0
 
 [node name="left" parent="." unique_id=462097833 instance=ExtResource("5_ja46e")]
 offset_left = 120.0

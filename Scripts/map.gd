@@ -25,9 +25,10 @@ var explored = []
 
 var playercircle
 var currentlayout
-
+var mf = 0
 var selfpos = [1,3]
 var shown = 0
+var parasiteaccess = 0
 var mapaccess = 0
 var cell_size := 50
 var SquareScene := preload("res://Scenes/square.tscn")

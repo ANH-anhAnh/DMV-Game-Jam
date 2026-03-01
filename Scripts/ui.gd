@@ -15,6 +15,12 @@ func _ready() -> void:
 	else:
 		$CanvasLayer/Button.disabled = true
 		$CanvasLayer/Button.visible = false
+	if Map.parasiteaccess:
+		$CanvasLayer/Button2.disabled = false
+		$CanvasLayer/Button2.visible = true
+	else:
+		$CanvasLayer/Button2.disabled = true
+		$CanvasLayer/Button2.visible = false
 	
 	var newheight = (260.0 / 100.0) * hunger
 	var heightdiff = newheight - $CanvasLayer/ColorRect.size.y

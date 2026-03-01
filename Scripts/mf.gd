@@ -20,6 +20,7 @@ func _on_button_pressed() -> void:
 	$Textbox.queue_text(" What a bloodydamn psycho…","default","default",0)
 	await wait_for_next_event(.1)
 	Map.mapaccess = 1
+	Map.mf = 1
 	get_node("../UI/CanvasLayer/Button").disabled = false
 	get_node("../UI/CanvasLayer/Button").visible = true
 

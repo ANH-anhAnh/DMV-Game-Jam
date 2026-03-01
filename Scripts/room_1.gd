@@ -41,7 +41,7 @@ func _ready() -> void:
 	
 	textbox.queue_text(
 		"This one’s always been a pain in the arse, I tell ya. Inject him and get it over with.",
-		"default", "default", 1
+		"default", "pastor_annoyed", 1
 	)
 	# pastor appears -------------------------------------------------------------------------------
 	$whoosh.play()
@@ -52,14 +52,9 @@ func _ready() -> void:
 	.from(Color(1, 1, 1, 0))
 	await wait_for_next_event(0.1)
 	# pastor speech --------------------------------------------------------------------------------
-	# TODO: animate this
-	#pastor_speech_text.text = "Hah. Pick’s always been a rowdy one. Big ideas. Big dreams..."
 	textboxpastor.queue_text("Hah. Pick’s always been a rowdy one. Big ideas. Big dreams...", "default","default", 1)
-	#pastor_speech_text.text = "But now, is the era of Darkness. We need unity to survive. 
 	textboxpastor.queue_text("But now, is the era of Darkness. We need unity to survive.", "default","default", 1)
-	#So I beg you, children. Serve the Body faithfully, and it will serve you back."
 	textboxpastor.queue_text("So I beg you, children. Serve the Body faithfully, and it will serve you back.", "default","default", 1)
-	#pastor_speech_text.text = "For your fathers, lovers, mothers. For me. For you."
 	textboxpastor.queue_text("For your fathers, lovers, mothers. For me. For you.", "default","default", 1)
 	textboxpastor.queue_text(" ", "default","default", 1)
 	# injection animation --------------------------------------------------------------------------
@@ -78,7 +73,7 @@ func _ready() -> void:
 	$InjectionAnim.get_child(0).play("injection")
 	await wait_for_next_event(1.8)
 
-	textbox.queue_text("Suddenly, you jolt up and push past the pastor, running towards the exit.", "default", "default", 0)
+	textbox.queue_text("The pains jolts you awake. You push past the pastor towards the exit.", "default", "default", 0)
 	
 	await wait_for_next_event(0.1)
 	$PastorSpeech/PastorSpeaking.visible = false
